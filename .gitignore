@@ -1,5 +1,6 @@
 # Local agent/tool state
 .codex
+AGENTS.md
 
 # ROS/colcon generated output
 build/

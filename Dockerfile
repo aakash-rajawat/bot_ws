@@ -88,6 +88,8 @@ WORKDIR /workspaces/bot_ws
 
 COPY --chown=ubuntu:ubuntu . /workspaces/bot_ws
 
+RUN chown ubuntu:ubuntu /workspaces/bot_ws
+
 USER ubuntu
 
 RUN bash scripts/fetch_third_party.sh

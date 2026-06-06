@@ -48,7 +48,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN rosdep init || true \
     && mkdir -p /etc/ros/rosdep/sources.list.d
 
-RUN useradd --uid 1000 --create-home --shell /bin/bash ubuntu
+RUN if id -u ubuntu >/dev/null 2>&1; then \
+      usermod --shell /bin/bash ubuntu; \
+      mkdir -p /home/ubuntu; \
+      chown ubuntu:ubuntu /home/ubuntu; \
+    else \
+      useradd --uid 1000 --create-home --shell /bin/bash ubuntu; \
+    fi
 
 WORKDIR /tmp/bot_ws
 

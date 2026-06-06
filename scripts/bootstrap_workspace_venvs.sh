@@ -15,5 +15,6 @@ done
 
 rm -rf "${VENV_DIR}"
 env -u PYTHONPATH python3 -m venv "${VENV_DIR}"
+touch "${VENV_DIR}/COLCON_IGNORE"
 env -u PYTHONPATH "${VENV_DIR}/bin/python" -m pip install --upgrade pip setuptools wheel
 env -u PYTHONPATH "${VENV_DIR}/bin/python" -m pip install -r "${REQUIREMENTS_FILE}"

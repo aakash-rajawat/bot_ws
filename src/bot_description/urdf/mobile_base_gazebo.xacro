@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<robot name="bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    
+    <gazebo reference="rw_link">
+        <mu1>100000000000000.0</mu1>
+        <mu2>100000000000000.0</mu2>
+        <kp>1000000000000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="lw_link">
+        <mu1>100000000000000.0</mu1>
+        <mu2>100000000000000.0</mu2>
+        <kp>1000000000000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+    </gazebo>
+
+    <gazebo reference="castor_front_link">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+    </gazebo>
+
+    <gazebo reference="castor_rear_link">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <!-- Original hardcoded controller config path:
+                 <parameters>$(find bot_controller)/config/diff_drive_controller_config.yaml</parameters> -->
+            <parameters>$(arg controller_manager_config)</parameters>
+        </plugin>
+        <plugin filename="gz-sim-odometry-publisher-system"
+                name="gz::sim::systems::OdometryPublisher">
+            <odom_frame>odom</odom_frame>
+            <robot_base_frame>base_footprint</robot_base_frame>
+            <odom_publish_frequency>50</odom_publish_frequency>
+            <odom_topic>/model/bot/odometry</odom_topic>
+            <odom_covariance_topic>/model/bot/odometry_with_covariance</odom_covariance_topic>
+            <tf_topic>/model/bot/pose</tf_topic>
+            <dimensions>2</dimensions>
+        </plugin>
+    </gazebo>
+
+
+
+
+</robot>

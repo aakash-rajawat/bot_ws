@@ -1,0 +1,58 @@
+# Local agent/tool state
+.codex
+
+# ROS/colcon generated output
+build/
+install/
+log/
+**/build/
+**/install/
+**/log/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+notebooks_venv/
+xfeat_lightglue/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Local logs and run artifacts
+*.log
+container_log.log
+
+# VS Code generated databases
+.vscode/browse.vc*.db*
+.vscode/*.db*
+
+# Third-party generated/deprecated local trees
+third_party/build/
+third_party/install/
+third_party/ROPTLIB/
+third_party/accelerated_features/
+third_party/gtsam/
+
+# OS/editor noise
+.DS_Store
+
+# Local editor config
+.vscode/
+
+# FreeCAD backup files
+*.FCBak

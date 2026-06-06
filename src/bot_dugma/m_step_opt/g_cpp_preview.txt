@@ -1,0 +1,23 @@
+Preview of first few G_ijk as C++ expressions
+=============================================
+
+// k = 1
+// Exponent tuple : (2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r0**2*tx**2
+const float G_1 = Yisxx;
+
+// k = 2
+// Exponent tuple : (2, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r0*r1*tx**2
+const float G_2 = 2*Yisxy;
+
+// k = 3
+// Exponent tuple : (2, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r0*r2*tx**2
+const float G_3 = 2*Yisxz;
+
+// k = 636
+// Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : 1
+const float G_636 = Xisxx*std::pow(Xx, 2) + 2*Xisxy*Xx*Xy + 2*Xisxz*Xx*Xz + Xisyy*std::pow(Xy, 2) + 2*Xisyz*Xy*Xz + Xiszz*std::pow(Xz, 2);
+

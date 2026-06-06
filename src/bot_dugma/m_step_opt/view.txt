@@ -1,0 +1,3198 @@
+Pairwise energy symbolic view
+============================
+
+Number of additive terms in expanded L_ij: 1056
+Number of monomials in optimizer variables: 637
+Total degree in optimizer variables: 4
+
+Optimizer variable order:
+tx, ty, tz, r0, r1, r2, r3, r4, r5, r6, r7, r8
+
+Monomials and coefficients of L_ij / C_ij
+========================================
+
+[1]
+Exponent tuple : (2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*tx**2
+Coeff G_ijk    : Yisxx
+
+[2]
+Exponent tuple : (2, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*tx**2
+Coeff G_ijk    : 2*Yisxy
+
+[3]
+Exponent tuple : (2, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*tx**2
+Coeff G_ijk    : 2*Yisxz
+
+[4]
+Exponent tuple : (2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*tx**2
+Coeff G_ijk    : Yisyy
+
+[5]
+Exponent tuple : (2, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*tx**2
+Coeff G_ijk    : 2*Yisyz
+
+[6]
+Exponent tuple : (2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**2*tx**2
+Coeff G_ijk    : Yiszz
+
+[7]
+Exponent tuple : (2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : tx**2
+Coeff G_ijk    : Xisxx
+
+[8]
+Exponent tuple : (1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r3*tx*ty
+Coeff G_ijk    : 2*Yisxx
+
+[9]
+Exponent tuple : (1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r4*tx*ty
+Coeff G_ijk    : 2*Yisxy
+
+[10]
+Exponent tuple : (1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r5*tx*ty
+Coeff G_ijk    : 2*Yisxz
+
+[11]
+Exponent tuple : (1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r3*tx*ty
+Coeff G_ijk    : 2*Yisxy
+
+[12]
+Exponent tuple : (1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r4*tx*ty
+Coeff G_ijk    : 2*Yisyy
+
+[13]
+Exponent tuple : (1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r5*tx*ty
+Coeff G_ijk    : 2*Yisyz
+
+[14]
+Exponent tuple : (1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*r3*tx*ty
+Coeff G_ijk    : 2*Yisxz
+
+[15]
+Exponent tuple : (1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r2*r4*tx*ty
+Coeff G_ijk    : 2*Yisyz
+
+[16]
+Exponent tuple : (1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r2*r5*tx*ty
+Coeff G_ijk    : 2*Yiszz
+
+[17]
+Exponent tuple : (1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : tx*ty
+Coeff G_ijk    : 2*Xisxy
+
+[18]
+Exponent tuple : (1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r6*tx*tz
+Coeff G_ijk    : 2*Yisxx
+
+[19]
+Exponent tuple : (1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r7*tx*tz
+Coeff G_ijk    : 2*Yisxy
+
+[20]
+Exponent tuple : (1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r8*tx*tz
+Coeff G_ijk    : 2*Yisxz
+
+[21]
+Exponent tuple : (1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1*r6*tx*tz
+Coeff G_ijk    : 2*Yisxy
+
+[22]
+Exponent tuple : (1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1*r7*tx*tz
+Coeff G_ijk    : 2*Yisyy
+
+[23]
+Exponent tuple : (1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1*r8*tx*tz
+Coeff G_ijk    : 2*Yisyz
+
+[24]
+Exponent tuple : (1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r2*r6*tx*tz
+Coeff G_ijk    : 2*Yisxz
+
+[25]
+Exponent tuple : (1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r2*r7*tx*tz
+Coeff G_ijk    : 2*Yisyz
+
+[26]
+Exponent tuple : (1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r2*r8*tx*tz
+Coeff G_ijk    : 2*Yiszz
+
+[27]
+Exponent tuple : (1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : tx*tz
+Coeff G_ijk    : 2*Xisxz
+
+[28]
+Exponent tuple : (1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**3*tx
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[29]
+Exponent tuple : (1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r1*tx
+Coeff G_ijk    : 2*Yisxx*Yy + 4*Yisxy*Yx
+
+[30]
+Exponent tuple : (1, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r2*tx
+Coeff G_ijk    : 2*Yisxx*Yz + 4*Yisxz*Yx
+
+[31]
+Exponent tuple : (1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*tx
+Coeff G_ijk    : -2*Xx*Yisxx
+
+[32]
+Exponent tuple : (1, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1**2*tx
+Coeff G_ijk    : 4*Yisxy*Yy + 2*Yisyy*Yx
+
+[33]
+Exponent tuple : (1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r2*tx
+Coeff G_ijk    : 4*Yisxy*Yz + 4*Yisxz*Yy + 4*Yisyz*Yx
+
+[34]
+Exponent tuple : (1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*tx
+Coeff G_ijk    : -4*Xx*Yisxy
+
+[35]
+Exponent tuple : (1, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2**2*tx
+Coeff G_ijk    : 4*Yisxz*Yz + 2*Yiszz*Yx
+
+[36]
+Exponent tuple : (1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*tx
+Coeff G_ijk    : -4*Xx*Yisxz
+
+[37]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r3**2*tx
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[38]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r3*r4*tx
+Coeff G_ijk    : 2*Yisxx*Yy + 2*Yisxy*Yx
+
+[39]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r3*r5*tx
+Coeff G_ijk    : 2*Yisxx*Yz + 2*Yisxz*Yx
+
+[40]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r3*tx
+Coeff G_ijk    : -2*Xy*Yisxx
+
+[41]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r0*r4**2*tx
+Coeff G_ijk    : 2*Yisxy*Yy
+
+[42]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r0*r4*r5*tx
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisxz*Yy
+
+[43]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r4*tx
+Coeff G_ijk    : -2*Xy*Yisxy
+
+[44]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r0*r5**2*tx
+Coeff G_ijk    : 2*Yisxz*Yz
+
+[45]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r5*tx
+Coeff G_ijk    : -2*Xy*Yisxz
+
+[46]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r0*r6**2*tx
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[47]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r0*r6*r7*tx
+Coeff G_ijk    : 2*Yisxx*Yy + 2*Yisxy*Yx
+
+[48]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r0*r6*r8*tx
+Coeff G_ijk    : 2*Yisxx*Yz + 2*Yisxz*Yx
+
+[49]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r6*tx
+Coeff G_ijk    : -2*Xz*Yisxx
+
+[50]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r0*r7**2*tx
+Coeff G_ijk    : 2*Yisxy*Yy
+
+[51]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r0*r7*r8*tx
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisxz*Yy
+
+[52]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r7*tx
+Coeff G_ijk    : -2*Xz*Yisxy
+
+[53]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r0*r8**2*tx
+Coeff G_ijk    : 2*Yisxz*Yz
+
+[54]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r8*tx
+Coeff G_ijk    : -2*Xz*Yisxz
+
+[55]
+Exponent tuple : (1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*tx
+Coeff G_ijk    : 2*Xisxx*Yx
+
+[56]
+Exponent tuple : (1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**3*tx
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[57]
+Exponent tuple : (1, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r2*tx
+Coeff G_ijk    : 2*Yisyy*Yz + 4*Yisyz*Yy
+
+[58]
+Exponent tuple : (1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*tx
+Coeff G_ijk    : -2*Xx*Yisyy
+
+[59]
+Exponent tuple : (1, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2**2*tx
+Coeff G_ijk    : 4*Yisyz*Yz + 2*Yiszz*Yy
+
+[60]
+Exponent tuple : (1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*tx
+Coeff G_ijk    : -4*Xx*Yisyz
+
+[61]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r3**2*tx
+Coeff G_ijk    : 2*Yisxy*Yx
+
+[62]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r3*r4*tx
+Coeff G_ijk    : 2*Yisxy*Yy + 2*Yisyy*Yx
+
+[63]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r3*r5*tx
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisyz*Yx
+
+[64]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r3*tx
+Coeff G_ijk    : -2*Xy*Yisxy
+
+[65]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r1*r4**2*tx
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[66]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r1*r4*r5*tx
+Coeff G_ijk    : 2*Yisyy*Yz + 2*Yisyz*Yy
+
+[67]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r4*tx
+Coeff G_ijk    : -2*Xy*Yisyy
+
+[68]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r1*r5**2*tx
+Coeff G_ijk    : 2*Yisyz*Yz
+
+[69]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r5*tx
+Coeff G_ijk    : -2*Xy*Yisyz
+
+[70]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r1*r6**2*tx
+Coeff G_ijk    : 2*Yisxy*Yx
+
+[71]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r1*r6*r7*tx
+Coeff G_ijk    : 2*Yisxy*Yy + 2*Yisyy*Yx
+
+[72]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r1*r6*r8*tx
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisyz*Yx
+
+[73]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1*r6*tx
+Coeff G_ijk    : -2*Xz*Yisxy
+
+[74]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r1*r7**2*tx
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[75]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r1*r7*r8*tx
+Coeff G_ijk    : 2*Yisyy*Yz + 2*Yisyz*Yy
+
+[76]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1*r7*tx
+Coeff G_ijk    : -2*Xz*Yisyy
+
+[77]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r1*r8**2*tx
+Coeff G_ijk    : 2*Yisyz*Yz
+
+[78]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1*r8*tx
+Coeff G_ijk    : -2*Xz*Yisyz
+
+[79]
+Exponent tuple : (1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*tx
+Coeff G_ijk    : 2*Xisxx*Yy
+
+[80]
+Exponent tuple : (1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**3*tx
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[81]
+Exponent tuple : (1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**2*tx
+Coeff G_ijk    : -2*Xx*Yiszz
+
+[82]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*r3**2*tx
+Coeff G_ijk    : 2*Yisxz*Yx
+
+[83]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r2*r3*r4*tx
+Coeff G_ijk    : 2*Yisxz*Yy + 2*Yisyz*Yx
+
+[84]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r2*r3*r5*tx
+Coeff G_ijk    : 2*Yisxz*Yz + 2*Yiszz*Yx
+
+[85]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*r3*tx
+Coeff G_ijk    : -2*Xy*Yisxz
+
+[86]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r2*r4**2*tx
+Coeff G_ijk    : 2*Yisyz*Yy
+
+[87]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r2*r4*r5*tx
+Coeff G_ijk    : 2*Yisyz*Yz + 2*Yiszz*Yy
+
+[88]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r2*r4*tx
+Coeff G_ijk    : -2*Xy*Yisyz
+
+[89]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r2*r5**2*tx
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[90]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r2*r5*tx
+Coeff G_ijk    : -2*Xy*Yiszz
+
+[91]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r2*r6**2*tx
+Coeff G_ijk    : 2*Yisxz*Yx
+
+[92]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r2*r6*r7*tx
+Coeff G_ijk    : 2*Yisxz*Yy + 2*Yisyz*Yx
+
+[93]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r2*r6*r8*tx
+Coeff G_ijk    : 2*Yisxz*Yz + 2*Yiszz*Yx
+
+[94]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r2*r6*tx
+Coeff G_ijk    : -2*Xz*Yisxz
+
+[95]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r2*r7**2*tx
+Coeff G_ijk    : 2*Yisyz*Yy
+
+[96]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r2*r7*r8*tx
+Coeff G_ijk    : 2*Yisyz*Yz + 2*Yiszz*Yy
+
+[97]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r2*r7*tx
+Coeff G_ijk    : -2*Xz*Yisyz
+
+[98]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r2*r8**2*tx
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[99]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r2*r8*tx
+Coeff G_ijk    : -2*Xz*Yiszz
+
+[100]
+Exponent tuple : (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*tx
+Coeff G_ijk    : 2*Xisxx*Yz
+
+[101]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r3*tx
+Coeff G_ijk    : 2*Xisxy*Yx
+
+[102]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r4*tx
+Coeff G_ijk    : 2*Xisxy*Yy
+
+[103]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r5*tx
+Coeff G_ijk    : 2*Xisxy*Yz
+
+[104]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r6*tx
+Coeff G_ijk    : 2*Xisxz*Yx
+
+[105]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r7*tx
+Coeff G_ijk    : 2*Xisxz*Yy
+
+[106]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r8*tx
+Coeff G_ijk    : 2*Xisxz*Yz
+
+[107]
+Exponent tuple : (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : tx
+Coeff G_ijk    : -2*Xisxx*Xx - 2*Xisxy*Xy - 2*Xisxz*Xz
+
+[108]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r3**2*ty**2
+Coeff G_ijk    : Yisxx
+
+[109]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r3*r4*ty**2
+Coeff G_ijk    : 2*Yisxy
+
+[110]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r3*r5*ty**2
+Coeff G_ijk    : 2*Yisxz
+
+[111]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r4**2*ty**2
+Coeff G_ijk    : Yisyy
+
+[112]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r4*r5*ty**2
+Coeff G_ijk    : 2*Yisyz
+
+[113]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r5**2*ty**2
+Coeff G_ijk    : Yiszz
+
+[114]
+Exponent tuple : (0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : ty**2
+Coeff G_ijk    : Xisyy
+
+[115]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0)
+Monomial B_k   : r3*r6*ty*tz
+Coeff G_ijk    : 2*Yisxx
+
+[116]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0)
+Monomial B_k   : r3*r7*ty*tz
+Coeff G_ijk    : 2*Yisxy
+
+[117]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+Monomial B_k   : r3*r8*ty*tz
+Coeff G_ijk    : 2*Yisxz
+
+[118]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0)
+Monomial B_k   : r4*r6*ty*tz
+Coeff G_ijk    : 2*Yisxy
+
+[119]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0)
+Monomial B_k   : r4*r7*ty*tz
+Coeff G_ijk    : 2*Yisyy
+
+[120]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+Monomial B_k   : r4*r8*ty*tz
+Coeff G_ijk    : 2*Yisyz
+
+[121]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0)
+Monomial B_k   : r5*r6*ty*tz
+Coeff G_ijk    : 2*Yisxz
+
+[122]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0)
+Monomial B_k   : r5*r7*ty*tz
+Coeff G_ijk    : 2*Yisyz
+
+[123]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1)
+Monomial B_k   : r5*r8*ty*tz
+Coeff G_ijk    : 2*Yiszz
+
+[124]
+Exponent tuple : (0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : ty*tz
+Coeff G_ijk    : 2*Xisyz
+
+[125]
+Exponent tuple : (0, 1, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r3*ty
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[126]
+Exponent tuple : (0, 1, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r4*ty
+Coeff G_ijk    : 2*Yisxy*Yx
+
+[127]
+Exponent tuple : (0, 1, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0**2*r5*ty
+Coeff G_ijk    : 2*Yisxz*Yx
+
+[128]
+Exponent tuple : (0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r3*ty
+Coeff G_ijk    : 2*Yisxx*Yy + 2*Yisxy*Yx
+
+[129]
+Exponent tuple : (0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r4*ty
+Coeff G_ijk    : 2*Yisxy*Yy + 2*Yisyy*Yx
+
+[130]
+Exponent tuple : (0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r1*r5*ty
+Coeff G_ijk    : 2*Yisxz*Yy + 2*Yisyz*Yx
+
+[131]
+Exponent tuple : (0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r3*ty
+Coeff G_ijk    : 2*Yisxx*Yz + 2*Yisxz*Yx
+
+[132]
+Exponent tuple : (0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r4*ty
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisyz*Yx
+
+[133]
+Exponent tuple : (0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r2*r5*ty
+Coeff G_ijk    : 2*Yisxz*Yz + 2*Yiszz*Yx
+
+[134]
+Exponent tuple : (0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r3*ty
+Coeff G_ijk    : -2*Xx*Yisxx
+
+[135]
+Exponent tuple : (0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r4*ty
+Coeff G_ijk    : -2*Xx*Yisxy
+
+[136]
+Exponent tuple : (0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r5*ty
+Coeff G_ijk    : -2*Xx*Yisxz
+
+[137]
+Exponent tuple : (0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*ty
+Coeff G_ijk    : 2*Xisxy*Yx
+
+[138]
+Exponent tuple : (0, 1, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r3*ty
+Coeff G_ijk    : 2*Yisxy*Yy
+
+[139]
+Exponent tuple : (0, 1, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r4*ty
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[140]
+Exponent tuple : (0, 1, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1**2*r5*ty
+Coeff G_ijk    : 2*Yisyz*Yy
+
+[141]
+Exponent tuple : (0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r3*ty
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisxz*Yy
+
+[142]
+Exponent tuple : (0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r4*ty
+Coeff G_ijk    : 2*Yisyy*Yz + 2*Yisyz*Yy
+
+[143]
+Exponent tuple : (0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r2*r5*ty
+Coeff G_ijk    : 2*Yisyz*Yz + 2*Yiszz*Yy
+
+[144]
+Exponent tuple : (0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r3*ty
+Coeff G_ijk    : -2*Xx*Yisxy
+
+[145]
+Exponent tuple : (0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r4*ty
+Coeff G_ijk    : -2*Xx*Yisyy
+
+[146]
+Exponent tuple : (0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r5*ty
+Coeff G_ijk    : -2*Xx*Yisyz
+
+[147]
+Exponent tuple : (0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*ty
+Coeff G_ijk    : 2*Xisxy*Yy
+
+[148]
+Exponent tuple : (0, 1, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r3*ty
+Coeff G_ijk    : 2*Yisxz*Yz
+
+[149]
+Exponent tuple : (0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r4*ty
+Coeff G_ijk    : 2*Yisyz*Yz
+
+[150]
+Exponent tuple : (0, 1, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r2**2*r5*ty
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[151]
+Exponent tuple : (0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*r3*ty
+Coeff G_ijk    : -2*Xx*Yisxz
+
+[152]
+Exponent tuple : (0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r2*r4*ty
+Coeff G_ijk    : -2*Xx*Yisyz
+
+[153]
+Exponent tuple : (0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r2*r5*ty
+Coeff G_ijk    : -2*Xx*Yiszz
+
+[154]
+Exponent tuple : (0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*ty
+Coeff G_ijk    : 2*Xisxy*Yz
+
+[155]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0)
+Monomial B_k   : r3**3*ty
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[156]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0)
+Monomial B_k   : r3**2*r4*ty
+Coeff G_ijk    : 2*Yisxx*Yy + 4*Yisxy*Yx
+
+[157]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+Monomial B_k   : r3**2*r5*ty
+Coeff G_ijk    : 2*Yisxx*Yz + 4*Yisxz*Yx
+
+[158]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r3**2*ty
+Coeff G_ijk    : -2*Xy*Yisxx
+
+[159]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0)
+Monomial B_k   : r3*r4**2*ty
+Coeff G_ijk    : 4*Yisxy*Yy + 2*Yisyy*Yx
+
+[160]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0)
+Monomial B_k   : r3*r4*r5*ty
+Coeff G_ijk    : 4*Yisxy*Yz + 4*Yisxz*Yy + 4*Yisyz*Yx
+
+[161]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r3*r4*ty
+Coeff G_ijk    : -4*Xy*Yisxy
+
+[162]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0)
+Monomial B_k   : r3*r5**2*ty
+Coeff G_ijk    : 4*Yisxz*Yz + 2*Yiszz*Yx
+
+[163]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r3*r5*ty
+Coeff G_ijk    : -4*Xy*Yisxz
+
+[164]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
+Monomial B_k   : r3*r6**2*ty
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[165]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+Monomial B_k   : r3*r6*r7*ty
+Coeff G_ijk    : 2*Yisxx*Yy + 2*Yisxy*Yx
+
+[166]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1)
+Monomial B_k   : r3*r6*r8*ty
+Coeff G_ijk    : 2*Yisxx*Yz + 2*Yisxz*Yx
+
+[167]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0)
+Monomial B_k   : r3*r6*ty
+Coeff G_ijk    : -2*Xz*Yisxx
+
+[168]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0)
+Monomial B_k   : r3*r7**2*ty
+Coeff G_ijk    : 2*Yisxy*Yy
+
+[169]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1)
+Monomial B_k   : r3*r7*r8*ty
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisxz*Yy
+
+[170]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0)
+Monomial B_k   : r3*r7*ty
+Coeff G_ijk    : -2*Xz*Yisxy
+
+[171]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2)
+Monomial B_k   : r3*r8**2*ty
+Coeff G_ijk    : 2*Yisxz*Yz
+
+[172]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+Monomial B_k   : r3*r8*ty
+Coeff G_ijk    : -2*Xz*Yisxz
+
+[173]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r3*ty
+Coeff G_ijk    : 2*Xisyy*Yx
+
+[174]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0)
+Monomial B_k   : r4**3*ty
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[175]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0)
+Monomial B_k   : r4**2*r5*ty
+Coeff G_ijk    : 2*Yisyy*Yz + 4*Yisyz*Yy
+
+[176]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r4**2*ty
+Coeff G_ijk    : -2*Xy*Yisyy
+
+[177]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0)
+Monomial B_k   : r4*r5**2*ty
+Coeff G_ijk    : 4*Yisyz*Yz + 2*Yiszz*Yy
+
+[178]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r4*r5*ty
+Coeff G_ijk    : -4*Xy*Yisyz
+
+[179]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0)
+Monomial B_k   : r4*r6**2*ty
+Coeff G_ijk    : 2*Yisxy*Yx
+
+[180]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+Monomial B_k   : r4*r6*r7*ty
+Coeff G_ijk    : 2*Yisxy*Yy + 2*Yisyy*Yx
+
+[181]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1)
+Monomial B_k   : r4*r6*r8*ty
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisyz*Yx
+
+[182]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0)
+Monomial B_k   : r4*r6*ty
+Coeff G_ijk    : -2*Xz*Yisxy
+
+[183]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0)
+Monomial B_k   : r4*r7**2*ty
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[184]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1)
+Monomial B_k   : r4*r7*r8*ty
+Coeff G_ijk    : 2*Yisyy*Yz + 2*Yisyz*Yy
+
+[185]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0)
+Monomial B_k   : r4*r7*ty
+Coeff G_ijk    : -2*Xz*Yisyy
+
+[186]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2)
+Monomial B_k   : r4*r8**2*ty
+Coeff G_ijk    : 2*Yisyz*Yz
+
+[187]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+Monomial B_k   : r4*r8*ty
+Coeff G_ijk    : -2*Xz*Yisyz
+
+[188]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r4*ty
+Coeff G_ijk    : 2*Xisyy*Yy
+
+[189]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0)
+Monomial B_k   : r5**3*ty
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[190]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r5**2*ty
+Coeff G_ijk    : -2*Xy*Yiszz
+
+[191]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0)
+Monomial B_k   : r5*r6**2*ty
+Coeff G_ijk    : 2*Yisxz*Yx
+
+[192]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+Monomial B_k   : r5*r6*r7*ty
+Coeff G_ijk    : 2*Yisxz*Yy + 2*Yisyz*Yx
+
+[193]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1)
+Monomial B_k   : r5*r6*r8*ty
+Coeff G_ijk    : 2*Yisxz*Yz + 2*Yiszz*Yx
+
+[194]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0)
+Monomial B_k   : r5*r6*ty
+Coeff G_ijk    : -2*Xz*Yisxz
+
+[195]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0)
+Monomial B_k   : r5*r7**2*ty
+Coeff G_ijk    : 2*Yisyz*Yy
+
+[196]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1)
+Monomial B_k   : r5*r7*r8*ty
+Coeff G_ijk    : 2*Yisyz*Yz + 2*Yiszz*Yy
+
+[197]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0)
+Monomial B_k   : r5*r7*ty
+Coeff G_ijk    : -2*Xz*Yisyz
+
+[198]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2)
+Monomial B_k   : r5*r8**2*ty
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[199]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1)
+Monomial B_k   : r5*r8*ty
+Coeff G_ijk    : -2*Xz*Yiszz
+
+[200]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r5*ty
+Coeff G_ijk    : 2*Xisyy*Yz
+
+[201]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r6*ty
+Coeff G_ijk    : 2*Xisyz*Yx
+
+[202]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r7*ty
+Coeff G_ijk    : 2*Xisyz*Yy
+
+[203]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r8*ty
+Coeff G_ijk    : 2*Xisyz*Yz
+
+[204]
+Exponent tuple : (0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : ty
+Coeff G_ijk    : -2*Xisxy*Xx - 2*Xisyy*Xy - 2*Xisyz*Xz
+
+[205]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r6**2*tz**2
+Coeff G_ijk    : Yisxx
+
+[206]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r6*r7*tz**2
+Coeff G_ijk    : 2*Yisxy
+
+[207]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r6*r8*tz**2
+Coeff G_ijk    : 2*Yisxz
+
+[208]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r7**2*tz**2
+Coeff G_ijk    : Yisyy
+
+[209]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r7*r8*tz**2
+Coeff G_ijk    : 2*Yisyz
+
+[210]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r8**2*tz**2
+Coeff G_ijk    : Yiszz
+
+[211]
+Exponent tuple : (0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : tz**2
+Coeff G_ijk    : Xiszz
+
+[212]
+Exponent tuple : (0, 0, 1, 2, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0**2*r6*tz
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[213]
+Exponent tuple : (0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0**2*r7*tz
+Coeff G_ijk    : 2*Yisxy*Yx
+
+[214]
+Exponent tuple : (0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0**2*r8*tz
+Coeff G_ijk    : 2*Yisxz*Yx
+
+[215]
+Exponent tuple : (0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r1*r6*tz
+Coeff G_ijk    : 2*Yisxx*Yy + 2*Yisxy*Yx
+
+[216]
+Exponent tuple : (0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r1*r7*tz
+Coeff G_ijk    : 2*Yisxy*Yy + 2*Yisyy*Yx
+
+[217]
+Exponent tuple : (0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r1*r8*tz
+Coeff G_ijk    : 2*Yisxz*Yy + 2*Yisyz*Yx
+
+[218]
+Exponent tuple : (0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r2*r6*tz
+Coeff G_ijk    : 2*Yisxx*Yz + 2*Yisxz*Yx
+
+[219]
+Exponent tuple : (0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r2*r7*tz
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisyz*Yx
+
+[220]
+Exponent tuple : (0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r2*r8*tz
+Coeff G_ijk    : 2*Yisxz*Yz + 2*Yiszz*Yx
+
+[221]
+Exponent tuple : (0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r6*tz
+Coeff G_ijk    : -2*Xx*Yisxx
+
+[222]
+Exponent tuple : (0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r7*tz
+Coeff G_ijk    : -2*Xx*Yisxy
+
+[223]
+Exponent tuple : (0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r8*tz
+Coeff G_ijk    : -2*Xx*Yisxz
+
+[224]
+Exponent tuple : (0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*tz
+Coeff G_ijk    : 2*Xisxz*Yx
+
+[225]
+Exponent tuple : (0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1**2*r6*tz
+Coeff G_ijk    : 2*Yisxy*Yy
+
+[226]
+Exponent tuple : (0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1**2*r7*tz
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[227]
+Exponent tuple : (0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1**2*r8*tz
+Coeff G_ijk    : 2*Yisyz*Yy
+
+[228]
+Exponent tuple : (0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1*r2*r6*tz
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisxz*Yy
+
+[229]
+Exponent tuple : (0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1*r2*r7*tz
+Coeff G_ijk    : 2*Yisyy*Yz + 2*Yisyz*Yy
+
+[230]
+Exponent tuple : (0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1*r2*r8*tz
+Coeff G_ijk    : 2*Yisyz*Yz + 2*Yiszz*Yy
+
+[231]
+Exponent tuple : (0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1*r6*tz
+Coeff G_ijk    : -2*Xx*Yisxy
+
+[232]
+Exponent tuple : (0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1*r7*tz
+Coeff G_ijk    : -2*Xx*Yisyy
+
+[233]
+Exponent tuple : (0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1*r8*tz
+Coeff G_ijk    : -2*Xx*Yisyz
+
+[234]
+Exponent tuple : (0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*tz
+Coeff G_ijk    : 2*Xisxz*Yy
+
+[235]
+Exponent tuple : (0, 0, 1, 0, 0, 2, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r2**2*r6*tz
+Coeff G_ijk    : 2*Yisxz*Yz
+
+[236]
+Exponent tuple : (0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r2**2*r7*tz
+Coeff G_ijk    : 2*Yisyz*Yz
+
+[237]
+Exponent tuple : (0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r2**2*r8*tz
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[238]
+Exponent tuple : (0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r2*r6*tz
+Coeff G_ijk    : -2*Xx*Yisxz
+
+[239]
+Exponent tuple : (0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r2*r7*tz
+Coeff G_ijk    : -2*Xx*Yisyz
+
+[240]
+Exponent tuple : (0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r2*r8*tz
+Coeff G_ijk    : -2*Xx*Yiszz
+
+[241]
+Exponent tuple : (0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*tz
+Coeff G_ijk    : 2*Xisxz*Yz
+
+[242]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 2, 0, 0, 1, 0, 0)
+Monomial B_k   : r3**2*r6*tz
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[243]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 1, 0)
+Monomial B_k   : r3**2*r7*tz
+Coeff G_ijk    : 2*Yisxy*Yx
+
+[244]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 1)
+Monomial B_k   : r3**2*r8*tz
+Coeff G_ijk    : 2*Yisxz*Yx
+
+[245]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0)
+Monomial B_k   : r3*r4*r6*tz
+Coeff G_ijk    : 2*Yisxx*Yy + 2*Yisxy*Yx
+
+[246]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0)
+Monomial B_k   : r3*r4*r7*tz
+Coeff G_ijk    : 2*Yisxy*Yy + 2*Yisyy*Yx
+
+[247]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1)
+Monomial B_k   : r3*r4*r8*tz
+Coeff G_ijk    : 2*Yisxz*Yy + 2*Yisyz*Yx
+
+[248]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0)
+Monomial B_k   : r3*r5*r6*tz
+Coeff G_ijk    : 2*Yisxx*Yz + 2*Yisxz*Yx
+
+[249]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0)
+Monomial B_k   : r3*r5*r7*tz
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisyz*Yx
+
+[250]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1)
+Monomial B_k   : r3*r5*r8*tz
+Coeff G_ijk    : 2*Yisxz*Yz + 2*Yiszz*Yx
+
+[251]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0)
+Monomial B_k   : r3*r6*tz
+Coeff G_ijk    : -2*Xy*Yisxx
+
+[252]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0)
+Monomial B_k   : r3*r7*tz
+Coeff G_ijk    : -2*Xy*Yisxy
+
+[253]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+Monomial B_k   : r3*r8*tz
+Coeff G_ijk    : -2*Xy*Yisxz
+
+[254]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r3*tz
+Coeff G_ijk    : 2*Xisyz*Yx
+
+[255]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 2, 0, 1, 0, 0)
+Monomial B_k   : r4**2*r6*tz
+Coeff G_ijk    : 2*Yisxy*Yy
+
+[256]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 1, 0)
+Monomial B_k   : r4**2*r7*tz
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[257]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 1)
+Monomial B_k   : r4**2*r8*tz
+Coeff G_ijk    : 2*Yisyz*Yy
+
+[258]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0)
+Monomial B_k   : r4*r5*r6*tz
+Coeff G_ijk    : 2*Yisxy*Yz + 2*Yisxz*Yy
+
+[259]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0)
+Monomial B_k   : r4*r5*r7*tz
+Coeff G_ijk    : 2*Yisyy*Yz + 2*Yisyz*Yy
+
+[260]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1)
+Monomial B_k   : r4*r5*r8*tz
+Coeff G_ijk    : 2*Yisyz*Yz + 2*Yiszz*Yy
+
+[261]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0)
+Monomial B_k   : r4*r6*tz
+Coeff G_ijk    : -2*Xy*Yisxy
+
+[262]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0)
+Monomial B_k   : r4*r7*tz
+Coeff G_ijk    : -2*Xy*Yisyy
+
+[263]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+Monomial B_k   : r4*r8*tz
+Coeff G_ijk    : -2*Xy*Yisyz
+
+[264]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r4*tz
+Coeff G_ijk    : 2*Xisyz*Yy
+
+[265]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0, 0)
+Monomial B_k   : r5**2*r6*tz
+Coeff G_ijk    : 2*Yisxz*Yz
+
+[266]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0)
+Monomial B_k   : r5**2*r7*tz
+Coeff G_ijk    : 2*Yisyz*Yz
+
+[267]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 1)
+Monomial B_k   : r5**2*r8*tz
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[268]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0)
+Monomial B_k   : r5*r6*tz
+Coeff G_ijk    : -2*Xy*Yisxz
+
+[269]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0)
+Monomial B_k   : r5*r7*tz
+Coeff G_ijk    : -2*Xy*Yisyz
+
+[270]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1)
+Monomial B_k   : r5*r8*tz
+Coeff G_ijk    : -2*Xy*Yiszz
+
+[271]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r5*tz
+Coeff G_ijk    : 2*Xisyz*Yz
+
+[272]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 0, 0)
+Monomial B_k   : r6**3*tz
+Coeff G_ijk    : 2*Yisxx*Yx
+
+[273]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0)
+Monomial B_k   : r6**2*r7*tz
+Coeff G_ijk    : 2*Yisxx*Yy + 4*Yisxy*Yx
+
+[274]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 1)
+Monomial B_k   : r6**2*r8*tz
+Coeff G_ijk    : 2*Yisxx*Yz + 4*Yisxz*Yx
+
+[275]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r6**2*tz
+Coeff G_ijk    : -2*Xz*Yisxx
+
+[276]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2, 0)
+Monomial B_k   : r6*r7**2*tz
+Coeff G_ijk    : 4*Yisxy*Yy + 2*Yisyy*Yx
+
+[277]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1)
+Monomial B_k   : r6*r7*r8*tz
+Coeff G_ijk    : 4*Yisxy*Yz + 4*Yisxz*Yy + 4*Yisyz*Yx
+
+[278]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r6*r7*tz
+Coeff G_ijk    : -4*Xz*Yisxy
+
+[279]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 2)
+Monomial B_k   : r6*r8**2*tz
+Coeff G_ijk    : 4*Yisxz*Yz + 2*Yiszz*Yx
+
+[280]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r6*r8*tz
+Coeff G_ijk    : -4*Xz*Yisxz
+
+[281]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r6*tz
+Coeff G_ijk    : 2*Xiszz*Yx
+
+[282]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0)
+Monomial B_k   : r7**3*tz
+Coeff G_ijk    : 2*Yisyy*Yy
+
+[283]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1)
+Monomial B_k   : r7**2*r8*tz
+Coeff G_ijk    : 2*Yisyy*Yz + 4*Yisyz*Yy
+
+[284]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r7**2*tz
+Coeff G_ijk    : -2*Xz*Yisyy
+
+[285]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2)
+Monomial B_k   : r7*r8**2*tz
+Coeff G_ijk    : 4*Yisyz*Yz + 2*Yiszz*Yy
+
+[286]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r7*r8*tz
+Coeff G_ijk    : -4*Xz*Yisyz
+
+[287]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r7*tz
+Coeff G_ijk    : 2*Xiszz*Yy
+
+[288]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3)
+Monomial B_k   : r8**3*tz
+Coeff G_ijk    : 2*Yiszz*Yz
+
+[289]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r8**2*tz
+Coeff G_ijk    : -2*Xz*Yiszz
+
+[290]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r8*tz
+Coeff G_ijk    : 2*Xiszz*Yz
+
+[291]
+Exponent tuple : (0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : tz
+Coeff G_ijk    : -2*Xisxz*Xx - 2*Xisyz*Xy - 2*Xiszz*Xz
+
+[292]
+Exponent tuple : (0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**4
+Coeff G_ijk    : Yisxx*Yx**2
+
+[293]
+Exponent tuple : (0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**3*r1
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[294]
+Exponent tuple : (0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**3*r2
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[295]
+Exponent tuple : (0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**3
+Coeff G_ijk    : -2*Xx*Yisxx*Yx
+
+[296]
+Exponent tuple : (0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r1**2
+Coeff G_ijk    : Yisxx*Yy**2 + 4*Yisxy*Yx*Yy + Yisyy*Yx**2
+
+[297]
+Exponent tuple : (0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r1*r2
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 4*Yisxy*Yx*Yz + 4*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[298]
+Exponent tuple : (0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r1
+Coeff G_ijk    : -2*Xx*Yisxx*Yy - 4*Xx*Yisxy*Yx
+
+[299]
+Exponent tuple : (0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r2**2
+Coeff G_ijk    : Yisxx*Yz**2 + 4*Yisxz*Yx*Yz + Yiszz*Yx**2
+
+[300]
+Exponent tuple : (0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r2
+Coeff G_ijk    : -2*Xx*Yisxx*Yz - 4*Xx*Yisxz*Yx
+
+[301]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r3**2
+Coeff G_ijk    : 2*Yisxx*Yx**2
+
+[302]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r3*r4
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[303]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r0**2*r3*r5
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[304]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r3
+Coeff G_ijk    : -2*Xy*Yisxx*Yx
+
+[305]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r4**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yy
+
+[306]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r0**2*r4*r5
+Coeff G_ijk    : 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy
+
+[307]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0**2*r4
+Coeff G_ijk    : -2*Xy*Yisxy*Yx
+
+[308]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r0**2*r5**2
+Coeff G_ijk    : 2*Yisxz*Yx*Yz
+
+[309]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0**2*r5
+Coeff G_ijk    : -2*Xy*Yisxz*Yx
+
+[310]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r0**2*r6**2
+Coeff G_ijk    : 2*Yisxx*Yx**2
+
+[311]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r0**2*r6*r7
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[312]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r0**2*r6*r8
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[313]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0**2*r6
+Coeff G_ijk    : -2*Xz*Yisxx*Yx
+
+[314]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r0**2*r7**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yy
+
+[315]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r0**2*r7*r8
+Coeff G_ijk    : 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy
+
+[316]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0**2*r7
+Coeff G_ijk    : -2*Xz*Yisxy*Yx
+
+[317]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r0**2*r8**2
+Coeff G_ijk    : 2*Yisxz*Yx*Yz
+
+[318]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0**2*r8
+Coeff G_ijk    : -2*Xz*Yisxz*Yx
+
+[319]
+Exponent tuple : (0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0**2
+Coeff G_ijk    : Xisxx*Yx**2 + Xx**2*Yisxx
+
+[320]
+Exponent tuple : (0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1**3
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[321]
+Exponent tuple : (0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1**2*r2
+Coeff G_ijk    : 4*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 4*Yisyz*Yx*Yy
+
+[322]
+Exponent tuple : (0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1**2
+Coeff G_ijk    : -4*Xx*Yisxy*Yy - 2*Xx*Yisyy*Yx
+
+[323]
+Exponent tuple : (0, 0, 0, 1, 1, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r2**2
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 4*Yisxz*Yy*Yz + 4*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[324]
+Exponent tuple : (0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r2
+Coeff G_ijk    : -4*Xx*Yisxy*Yz - 4*Xx*Yisxz*Yy - 4*Xx*Yisyz*Yx
+
+[325]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r3**2
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[326]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r3*r4
+Coeff G_ijk    : 2*Yisxx*Yy**2 + 4*Yisxy*Yx*Yy + 2*Yisyy*Yx**2
+
+[327]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r1*r3*r5
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[328]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r3
+Coeff G_ijk    : -2*Xy*Yisxx*Yy - 2*Xy*Yisxy*Yx
+
+[329]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r4**2
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[330]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r0*r1*r4*r5
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 2*Yisyz*Yx*Yy
+
+[331]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r1*r4
+Coeff G_ijk    : -2*Xy*Yisxy*Yy - 2*Xy*Yisyy*Yx
+
+[332]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r0*r1*r5**2
+Coeff G_ijk    : 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz
+
+[333]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r1*r5
+Coeff G_ijk    : -2*Xy*Yisxz*Yy - 2*Xy*Yisyz*Yx
+
+[334]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r0*r1*r6**2
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[335]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r0*r1*r6*r7
+Coeff G_ijk    : 2*Yisxx*Yy**2 + 4*Yisxy*Yx*Yy + 2*Yisyy*Yx**2
+
+[336]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r0*r1*r6*r8
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[337]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r1*r6
+Coeff G_ijk    : -2*Xz*Yisxx*Yy - 2*Xz*Yisxy*Yx
+
+[338]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r0*r1*r7**2
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[339]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r0*r1*r7*r8
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 2*Yisyz*Yx*Yy
+
+[340]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r1*r7
+Coeff G_ijk    : -2*Xz*Yisxy*Yy - 2*Xz*Yisyy*Yx
+
+[341]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r0*r1*r8**2
+Coeff G_ijk    : 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz
+
+[342]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r1*r8
+Coeff G_ijk    : -2*Xz*Yisxz*Yy - 2*Xz*Yisyz*Yx
+
+[343]
+Exponent tuple : (0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r1
+Coeff G_ijk    : 2*Xisxx*Yx*Yy + 2*Xx**2*Yisxy
+
+[344]
+Exponent tuple : (0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2**3
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[345]
+Exponent tuple : (0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2**2
+Coeff G_ijk    : -4*Xx*Yisxz*Yz - 2*Xx*Yiszz*Yx
+
+[346]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r3**2
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[347]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r3*r4
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[348]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r2*r3*r5
+Coeff G_ijk    : 2*Yisxx*Yz**2 + 4*Yisxz*Yx*Yz + 2*Yiszz*Yx**2
+
+[349]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r3
+Coeff G_ijk    : -2*Xy*Yisxx*Yz - 2*Xy*Yisxz*Yx
+
+[350]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r4**2
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisyz*Yx*Yy
+
+[351]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r0*r2*r4*r5
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[352]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r2*r4
+Coeff G_ijk    : -2*Xy*Yisxy*Yz - 2*Xy*Yisyz*Yx
+
+[353]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r0*r2*r5**2
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[354]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r2*r5
+Coeff G_ijk    : -2*Xy*Yisxz*Yz - 2*Xy*Yiszz*Yx
+
+[355]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r0*r2*r6**2
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[356]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r0*r2*r6*r7
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[357]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r0*r2*r6*r8
+Coeff G_ijk    : 2*Yisxx*Yz**2 + 4*Yisxz*Yx*Yz + 2*Yiszz*Yx**2
+
+[358]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r2*r6
+Coeff G_ijk    : -2*Xz*Yisxx*Yz - 2*Xz*Yisxz*Yx
+
+[359]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r0*r2*r7**2
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisyz*Yx*Yy
+
+[360]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r0*r2*r7*r8
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[361]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r2*r7
+Coeff G_ijk    : -2*Xz*Yisxy*Yz - 2*Xz*Yisyz*Yx
+
+[362]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r0*r2*r8**2
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[363]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r2*r8
+Coeff G_ijk    : -2*Xz*Yisxz*Yz - 2*Xz*Yiszz*Yx
+
+[364]
+Exponent tuple : (0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r2
+Coeff G_ijk    : 2*Xisxx*Yx*Yz + 2*Xx**2*Yisxz
+
+[365]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r3**2
+Coeff G_ijk    : -2*Xx*Yisxx*Yx
+
+[366]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r3*r4
+Coeff G_ijk    : -2*Xx*Yisxx*Yy - 2*Xx*Yisxy*Yx
+
+[367]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r3*r5
+Coeff G_ijk    : -2*Xx*Yisxx*Yz - 2*Xx*Yisxz*Yx
+
+[368]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r0*r3
+Coeff G_ijk    : 2*Xisxy*Yx**2 + 2*Xx*Xy*Yisxx
+
+[369]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r0*r4**2
+Coeff G_ijk    : -2*Xx*Yisxy*Yy
+
+[370]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r0*r4*r5
+Coeff G_ijk    : -2*Xx*Yisxy*Yz - 2*Xx*Yisxz*Yy
+
+[371]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r0*r4
+Coeff G_ijk    : 2*Xisxy*Yx*Yy + 2*Xx*Xy*Yisxy
+
+[372]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r0*r5**2
+Coeff G_ijk    : -2*Xx*Yisxz*Yz
+
+[373]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r0*r5
+Coeff G_ijk    : 2*Xisxy*Yx*Yz + 2*Xx*Xy*Yisxz
+
+[374]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r0*r6**2
+Coeff G_ijk    : -2*Xx*Yisxx*Yx
+
+[375]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r0*r6*r7
+Coeff G_ijk    : -2*Xx*Yisxx*Yy - 2*Xx*Yisxy*Yx
+
+[376]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r0*r6*r8
+Coeff G_ijk    : -2*Xx*Yisxx*Yz - 2*Xx*Yisxz*Yx
+
+[377]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r0*r6
+Coeff G_ijk    : 2*Xisxz*Yx**2 + 2*Xx*Xz*Yisxx
+
+[378]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r0*r7**2
+Coeff G_ijk    : -2*Xx*Yisxy*Yy
+
+[379]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r0*r7*r8
+Coeff G_ijk    : -2*Xx*Yisxy*Yz - 2*Xx*Yisxz*Yy
+
+[380]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r0*r7
+Coeff G_ijk    : 2*Xisxz*Yx*Yy + 2*Xx*Xz*Yisxy
+
+[381]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r0*r8**2
+Coeff G_ijk    : -2*Xx*Yisxz*Yz
+
+[382]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r0*r8
+Coeff G_ijk    : 2*Xisxz*Yx*Yz + 2*Xx*Xz*Yisxz
+
+[383]
+Exponent tuple : (0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r0
+Coeff G_ijk    : -2*Xisxx*Xx*Yx - 2*Xisxy*Xy*Yx - 2*Xisxz*Xz*Yx
+
+[384]
+Exponent tuple : (0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**4
+Coeff G_ijk    : Yisyy*Yy**2
+
+[385]
+Exponent tuple : (0, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**3*r2
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[386]
+Exponent tuple : (0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**3
+Coeff G_ijk    : -2*Xx*Yisyy*Yy
+
+[387]
+Exponent tuple : (0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r2**2
+Coeff G_ijk    : Yisyy*Yz**2 + 4*Yisyz*Yy*Yz + Yiszz*Yy**2
+
+[388]
+Exponent tuple : (0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r2
+Coeff G_ijk    : -2*Xx*Yisyy*Yz - 4*Xx*Yisyz*Yy
+
+[389]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r3**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yy
+
+[390]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r3*r4
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[391]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r1**2*r3*r5
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisyz*Yx*Yy
+
+[392]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r3
+Coeff G_ijk    : -2*Xy*Yisxy*Yy
+
+[393]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r4**2
+Coeff G_ijk    : 2*Yisyy*Yy**2
+
+[394]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r1**2*r4*r5
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[395]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1**2*r4
+Coeff G_ijk    : -2*Xy*Yisyy*Yy
+
+[396]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r1**2*r5**2
+Coeff G_ijk    : 2*Yisyz*Yy*Yz
+
+[397]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1**2*r5
+Coeff G_ijk    : -2*Xy*Yisyz*Yy
+
+[398]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r1**2*r6**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yy
+
+[399]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r1**2*r6*r7
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[400]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r1**2*r6*r8
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisyz*Yx*Yy
+
+[401]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1**2*r6
+Coeff G_ijk    : -2*Xz*Yisxy*Yy
+
+[402]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r1**2*r7**2
+Coeff G_ijk    : 2*Yisyy*Yy**2
+
+[403]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r1**2*r7*r8
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[404]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1**2*r7
+Coeff G_ijk    : -2*Xz*Yisyy*Yy
+
+[405]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r1**2*r8**2
+Coeff G_ijk    : 2*Yisyz*Yy*Yz
+
+[406]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1**2*r8
+Coeff G_ijk    : -2*Xz*Yisyz*Yy
+
+[407]
+Exponent tuple : (0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1**2
+Coeff G_ijk    : Xisxx*Yy**2 + Xx**2*Yisyy
+
+[408]
+Exponent tuple : (0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2**3
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[409]
+Exponent tuple : (0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2**2
+Coeff G_ijk    : -4*Xx*Yisyz*Yz - 2*Xx*Yiszz*Yy
+
+[410]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r3**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy
+
+[411]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r3*r4
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 2*Yisyz*Yx*Yy
+
+[412]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r2*r3*r5
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[413]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r3
+Coeff G_ijk    : -2*Xy*Yisxy*Yz - 2*Xy*Yisxz*Yy
+
+[414]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r4**2
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[415]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r1*r2*r4*r5
+Coeff G_ijk    : 2*Yisyy*Yz**2 + 4*Yisyz*Yy*Yz + 2*Yiszz*Yy**2
+
+[416]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r2*r4
+Coeff G_ijk    : -2*Xy*Yisyy*Yz - 2*Xy*Yisyz*Yy
+
+[417]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r1*r2*r5**2
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[418]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r2*r5
+Coeff G_ijk    : -2*Xy*Yisyz*Yz - 2*Xy*Yiszz*Yy
+
+[419]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r1*r2*r6**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy
+
+[420]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r1*r2*r6*r7
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 2*Yisyz*Yx*Yy
+
+[421]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r1*r2*r6*r8
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[422]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1*r2*r6
+Coeff G_ijk    : -2*Xz*Yisxy*Yz - 2*Xz*Yisxz*Yy
+
+[423]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r1*r2*r7**2
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[424]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r1*r2*r7*r8
+Coeff G_ijk    : 2*Yisyy*Yz**2 + 4*Yisyz*Yy*Yz + 2*Yiszz*Yy**2
+
+[425]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1*r2*r7
+Coeff G_ijk    : -2*Xz*Yisyy*Yz - 2*Xz*Yisyz*Yy
+
+[426]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r1*r2*r8**2
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[427]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1*r2*r8
+Coeff G_ijk    : -2*Xz*Yisyz*Yz - 2*Xz*Yiszz*Yy
+
+[428]
+Exponent tuple : (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r2
+Coeff G_ijk    : 2*Xisxx*Yy*Yz + 2*Xx**2*Yisyz
+
+[429]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r3**2
+Coeff G_ijk    : -2*Xx*Yisxy*Yx
+
+[430]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r3*r4
+Coeff G_ijk    : -2*Xx*Yisxy*Yy - 2*Xx*Yisyy*Yx
+
+[431]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r3*r5
+Coeff G_ijk    : -2*Xx*Yisxy*Yz - 2*Xx*Yisyz*Yx
+
+[432]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r1*r3
+Coeff G_ijk    : 2*Xisxy*Yx*Yy + 2*Xx*Xy*Yisxy
+
+[433]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r1*r4**2
+Coeff G_ijk    : -2*Xx*Yisyy*Yy
+
+[434]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r1*r4*r5
+Coeff G_ijk    : -2*Xx*Yisyy*Yz - 2*Xx*Yisyz*Yy
+
+[435]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r1*r4
+Coeff G_ijk    : 2*Xisxy*Yy**2 + 2*Xx*Xy*Yisyy
+
+[436]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r1*r5**2
+Coeff G_ijk    : -2*Xx*Yisyz*Yz
+
+[437]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r1*r5
+Coeff G_ijk    : 2*Xisxy*Yy*Yz + 2*Xx*Xy*Yisyz
+
+[438]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r1*r6**2
+Coeff G_ijk    : -2*Xx*Yisxy*Yx
+
+[439]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r1*r6*r7
+Coeff G_ijk    : -2*Xx*Yisxy*Yy - 2*Xx*Yisyy*Yx
+
+[440]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r1*r6*r8
+Coeff G_ijk    : -2*Xx*Yisxy*Yz - 2*Xx*Yisyz*Yx
+
+[441]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r1*r6
+Coeff G_ijk    : 2*Xisxz*Yx*Yy + 2*Xx*Xz*Yisxy
+
+[442]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r1*r7**2
+Coeff G_ijk    : -2*Xx*Yisyy*Yy
+
+[443]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r1*r7*r8
+Coeff G_ijk    : -2*Xx*Yisyy*Yz - 2*Xx*Yisyz*Yy
+
+[444]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r1*r7
+Coeff G_ijk    : 2*Xisxz*Yy**2 + 2*Xx*Xz*Yisyy
+
+[445]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r1*r8**2
+Coeff G_ijk    : -2*Xx*Yisyz*Yz
+
+[446]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r1*r8
+Coeff G_ijk    : 2*Xisxz*Yy*Yz + 2*Xx*Xz*Yisyz
+
+[447]
+Exponent tuple : (0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r1
+Coeff G_ijk    : -2*Xisxx*Xx*Yy - 2*Xisxy*Xy*Yy - 2*Xisxz*Xz*Yy
+
+[448]
+Exponent tuple : (0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**4
+Coeff G_ijk    : Yiszz*Yz**2
+
+[449]
+Exponent tuple : (0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**3
+Coeff G_ijk    : -2*Xx*Yiszz*Yz
+
+[450]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r3**2
+Coeff G_ijk    : 2*Yisxz*Yx*Yz
+
+[451]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r3*r4
+Coeff G_ijk    : 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz
+
+[452]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r2**2*r3*r5
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[453]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r3
+Coeff G_ijk    : -2*Xy*Yisxz*Yz
+
+[454]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r4**2
+Coeff G_ijk    : 2*Yisyz*Yy*Yz
+
+[455]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r2**2*r4*r5
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[456]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r2**2*r4
+Coeff G_ijk    : -2*Xy*Yisyz*Yz
+
+[457]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r2**2*r5**2
+Coeff G_ijk    : 2*Yiszz*Yz**2
+
+[458]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r2**2*r5
+Coeff G_ijk    : -2*Xy*Yiszz*Yz
+
+[459]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r2**2*r6**2
+Coeff G_ijk    : 2*Yisxz*Yx*Yz
+
+[460]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r2**2*r6*r7
+Coeff G_ijk    : 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz
+
+[461]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r2**2*r6*r8
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[462]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r2**2*r6
+Coeff G_ijk    : -2*Xz*Yisxz*Yz
+
+[463]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r2**2*r7**2
+Coeff G_ijk    : 2*Yisyz*Yy*Yz
+
+[464]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r2**2*r7*r8
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[465]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r2**2*r7
+Coeff G_ijk    : -2*Xz*Yisyz*Yz
+
+[466]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r2**2*r8**2
+Coeff G_ijk    : 2*Yiszz*Yz**2
+
+[467]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r2**2*r8
+Coeff G_ijk    : -2*Xz*Yiszz*Yz
+
+[468]
+Exponent tuple : (0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2**2
+Coeff G_ijk    : Xisxx*Yz**2 + Xx**2*Yiszz
+
+[469]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*r3**2
+Coeff G_ijk    : -2*Xx*Yisxz*Yx
+
+[470]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r2*r3*r4
+Coeff G_ijk    : -2*Xx*Yisxz*Yy - 2*Xx*Yisyz*Yx
+
+[471]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r2*r3*r5
+Coeff G_ijk    : -2*Xx*Yisxz*Yz - 2*Xx*Yiszz*Yx
+
+[472]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r2*r3
+Coeff G_ijk    : 2*Xisxy*Yx*Yz + 2*Xx*Xy*Yisxz
+
+[473]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r2*r4**2
+Coeff G_ijk    : -2*Xx*Yisyz*Yy
+
+[474]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r2*r4*r5
+Coeff G_ijk    : -2*Xx*Yisyz*Yz - 2*Xx*Yiszz*Yy
+
+[475]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r2*r4
+Coeff G_ijk    : 2*Xisxy*Yy*Yz + 2*Xx*Xy*Yisyz
+
+[476]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r2*r5**2
+Coeff G_ijk    : -2*Xx*Yiszz*Yz
+
+[477]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r2*r5
+Coeff G_ijk    : 2*Xisxy*Yz**2 + 2*Xx*Xy*Yiszz
+
+[478]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r2*r6**2
+Coeff G_ijk    : -2*Xx*Yisxz*Yx
+
+[479]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r2*r6*r7
+Coeff G_ijk    : -2*Xx*Yisxz*Yy - 2*Xx*Yisyz*Yx
+
+[480]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r2*r6*r8
+Coeff G_ijk    : -2*Xx*Yisxz*Yz - 2*Xx*Yiszz*Yx
+
+[481]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r2*r6
+Coeff G_ijk    : 2*Xisxz*Yx*Yz + 2*Xx*Xz*Yisxz
+
+[482]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r2*r7**2
+Coeff G_ijk    : -2*Xx*Yisyz*Yy
+
+[483]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r2*r7*r8
+Coeff G_ijk    : -2*Xx*Yisyz*Yz - 2*Xx*Yiszz*Yy
+
+[484]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r2*r7
+Coeff G_ijk    : 2*Xisxz*Yy*Yz + 2*Xx*Xz*Yisyz
+
+[485]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r2*r8**2
+Coeff G_ijk    : -2*Xx*Yiszz*Yz
+
+[486]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r2*r8
+Coeff G_ijk    : 2*Xisxz*Yz**2 + 2*Xx*Xz*Yiszz
+
+[487]
+Exponent tuple : (0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : r2
+Coeff G_ijk    : -2*Xisxx*Xx*Yz - 2*Xisxy*Xy*Yz - 2*Xisxz*Xz*Yz
+
+[488]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0)
+Monomial B_k   : r3**4
+Coeff G_ijk    : Yisxx*Yx**2
+
+[489]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0)
+Monomial B_k   : r3**3*r4
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[490]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0)
+Monomial B_k   : r3**3*r5
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[491]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0)
+Monomial B_k   : r3**3
+Coeff G_ijk    : -2*Xy*Yisxx*Yx
+
+[492]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0)
+Monomial B_k   : r3**2*r4**2
+Coeff G_ijk    : Yisxx*Yy**2 + 4*Yisxy*Yx*Yy + Yisyy*Yx**2
+
+[493]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0)
+Monomial B_k   : r3**2*r4*r5
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 4*Yisxy*Yx*Yz + 4*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[494]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0)
+Monomial B_k   : r3**2*r4
+Coeff G_ijk    : -2*Xy*Yisxx*Yy - 4*Xy*Yisxy*Yx
+
+[495]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0)
+Monomial B_k   : r3**2*r5**2
+Coeff G_ijk    : Yisxx*Yz**2 + 4*Yisxz*Yx*Yz + Yiszz*Yx**2
+
+[496]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+Monomial B_k   : r3**2*r5
+Coeff G_ijk    : -2*Xy*Yisxx*Yz - 4*Xy*Yisxz*Yx
+
+[497]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0)
+Monomial B_k   : r3**2*r6**2
+Coeff G_ijk    : 2*Yisxx*Yx**2
+
+[498]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 1, 0)
+Monomial B_k   : r3**2*r6*r7
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[499]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1)
+Monomial B_k   : r3**2*r6*r8
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[500]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0)
+Monomial B_k   : r3**2*r6
+Coeff G_ijk    : -2*Xz*Yisxx*Yx
+
+[501]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0)
+Monomial B_k   : r3**2*r7**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yy
+
+[502]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 1)
+Monomial B_k   : r3**2*r7*r8
+Coeff G_ijk    : 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy
+
+[503]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0)
+Monomial B_k   : r3**2*r7
+Coeff G_ijk    : -2*Xz*Yisxy*Yx
+
+[504]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2)
+Monomial B_k   : r3**2*r8**2
+Coeff G_ijk    : 2*Yisxz*Yx*Yz
+
+[505]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1)
+Monomial B_k   : r3**2*r8
+Coeff G_ijk    : -2*Xz*Yisxz*Yx
+
+[506]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+Monomial B_k   : r3**2
+Coeff G_ijk    : Xisyy*Yx**2 + Xy**2*Yisxx
+
+[507]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0)
+Monomial B_k   : r3*r4**3
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[508]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0)
+Monomial B_k   : r3*r4**2*r5
+Coeff G_ijk    : 4*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 4*Yisyz*Yx*Yy
+
+[509]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0)
+Monomial B_k   : r3*r4**2
+Coeff G_ijk    : -4*Xy*Yisxy*Yy - 2*Xy*Yisyy*Yx
+
+[510]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0)
+Monomial B_k   : r3*r4*r5**2
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 4*Yisxz*Yy*Yz + 4*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[511]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0)
+Monomial B_k   : r3*r4*r5
+Coeff G_ijk    : -4*Xy*Yisxy*Yz - 4*Xy*Yisxz*Yy - 4*Xy*Yisyz*Yx
+
+[512]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0)
+Monomial B_k   : r3*r4*r6**2
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[513]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0)
+Monomial B_k   : r3*r4*r6*r7
+Coeff G_ijk    : 2*Yisxx*Yy**2 + 4*Yisxy*Yx*Yy + 2*Yisyy*Yx**2
+
+[514]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1)
+Monomial B_k   : r3*r4*r6*r8
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[515]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0)
+Monomial B_k   : r3*r4*r6
+Coeff G_ijk    : -2*Xz*Yisxx*Yy - 2*Xz*Yisxy*Yx
+
+[516]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 2, 0)
+Monomial B_k   : r3*r4*r7**2
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[517]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1)
+Monomial B_k   : r3*r4*r7*r8
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 2*Yisyz*Yx*Yy
+
+[518]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0)
+Monomial B_k   : r3*r4*r7
+Coeff G_ijk    : -2*Xz*Yisxy*Yy - 2*Xz*Yisyy*Yx
+
+[519]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2)
+Monomial B_k   : r3*r4*r8**2
+Coeff G_ijk    : 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz
+
+[520]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1)
+Monomial B_k   : r3*r4*r8
+Coeff G_ijk    : -2*Xz*Yisxz*Yy - 2*Xz*Yisyz*Yx
+
+[521]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0)
+Monomial B_k   : r3*r4
+Coeff G_ijk    : 2*Xisyy*Yx*Yy + 2*Xy**2*Yisxy
+
+[522]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0)
+Monomial B_k   : r3*r5**3
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[523]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0)
+Monomial B_k   : r3*r5**2
+Coeff G_ijk    : -4*Xy*Yisxz*Yz - 2*Xy*Yiszz*Yx
+
+[524]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 2, 0, 0)
+Monomial B_k   : r3*r5*r6**2
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[525]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0)
+Monomial B_k   : r3*r5*r6*r7
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[526]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1)
+Monomial B_k   : r3*r5*r6*r8
+Coeff G_ijk    : 2*Yisxx*Yz**2 + 4*Yisxz*Yx*Yz + 2*Yiszz*Yx**2
+
+[527]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0)
+Monomial B_k   : r3*r5*r6
+Coeff G_ijk    : -2*Xz*Yisxx*Yz - 2*Xz*Yisxz*Yx
+
+[528]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2, 0)
+Monomial B_k   : r3*r5*r7**2
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisyz*Yx*Yy
+
+[529]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1)
+Monomial B_k   : r3*r5*r7*r8
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[530]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0)
+Monomial B_k   : r3*r5*r7
+Coeff G_ijk    : -2*Xz*Yisxy*Yz - 2*Xz*Yisyz*Yx
+
+[531]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 2)
+Monomial B_k   : r3*r5*r8**2
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[532]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1)
+Monomial B_k   : r3*r5*r8
+Coeff G_ijk    : -2*Xz*Yisxz*Yz - 2*Xz*Yiszz*Yx
+
+[533]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0)
+Monomial B_k   : r3*r5
+Coeff G_ijk    : 2*Xisyy*Yx*Yz + 2*Xy**2*Yisxz
+
+[534]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
+Monomial B_k   : r3*r6**2
+Coeff G_ijk    : -2*Xy*Yisxx*Yx
+
+[535]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0)
+Monomial B_k   : r3*r6*r7
+Coeff G_ijk    : -2*Xy*Yisxx*Yy - 2*Xy*Yisxy*Yx
+
+[536]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1)
+Monomial B_k   : r3*r6*r8
+Coeff G_ijk    : -2*Xy*Yisxx*Yz - 2*Xy*Yisxz*Yx
+
+[537]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0)
+Monomial B_k   : r3*r6
+Coeff G_ijk    : 2*Xisyz*Yx**2 + 2*Xy*Xz*Yisxx
+
+[538]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0)
+Monomial B_k   : r3*r7**2
+Coeff G_ijk    : -2*Xy*Yisxy*Yy
+
+[539]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1)
+Monomial B_k   : r3*r7*r8
+Coeff G_ijk    : -2*Xy*Yisxy*Yz - 2*Xy*Yisxz*Yy
+
+[540]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0)
+Monomial B_k   : r3*r7
+Coeff G_ijk    : 2*Xisyz*Yx*Yy + 2*Xy*Xz*Yisxy
+
+[541]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2)
+Monomial B_k   : r3*r8**2
+Coeff G_ijk    : -2*Xy*Yisxz*Yz
+
+[542]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+Monomial B_k   : r3*r8
+Coeff G_ijk    : 2*Xisyz*Yx*Yz + 2*Xy*Xz*Yisxz
+
+[543]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+Monomial B_k   : r3
+Coeff G_ijk    : -2*Xisxy*Xx*Yx - 2*Xisyy*Xy*Yx - 2*Xisyz*Xz*Yx
+
+[544]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0)
+Monomial B_k   : r4**4
+Coeff G_ijk    : Yisyy*Yy**2
+
+[545]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0)
+Monomial B_k   : r4**3*r5
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[546]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0)
+Monomial B_k   : r4**3
+Coeff G_ijk    : -2*Xy*Yisyy*Yy
+
+[547]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0)
+Monomial B_k   : r4**2*r5**2
+Coeff G_ijk    : Yisyy*Yz**2 + 4*Yisyz*Yy*Yz + Yiszz*Yy**2
+
+[548]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0)
+Monomial B_k   : r4**2*r5
+Coeff G_ijk    : -2*Xy*Yisyy*Yz - 4*Xy*Yisyz*Yy
+
+[549]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0)
+Monomial B_k   : r4**2*r6**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yy
+
+[550]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 1, 0)
+Monomial B_k   : r4**2*r6*r7
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[551]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1)
+Monomial B_k   : r4**2*r6*r8
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisyz*Yx*Yy
+
+[552]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0)
+Monomial B_k   : r4**2*r6
+Coeff G_ijk    : -2*Xz*Yisxy*Yy
+
+[553]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0)
+Monomial B_k   : r4**2*r7**2
+Coeff G_ijk    : 2*Yisyy*Yy**2
+
+[554]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 1)
+Monomial B_k   : r4**2*r7*r8
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[555]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0)
+Monomial B_k   : r4**2*r7
+Coeff G_ijk    : -2*Xz*Yisyy*Yy
+
+[556]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2)
+Monomial B_k   : r4**2*r8**2
+Coeff G_ijk    : 2*Yisyz*Yy*Yz
+
+[557]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1)
+Monomial B_k   : r4**2*r8
+Coeff G_ijk    : -2*Xz*Yisyz*Yy
+
+[558]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0)
+Monomial B_k   : r4**2
+Coeff G_ijk    : Xisyy*Yy**2 + Xy**2*Yisyy
+
+[559]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0)
+Monomial B_k   : r4*r5**3
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[560]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0)
+Monomial B_k   : r4*r5**2
+Coeff G_ijk    : -4*Xy*Yisyz*Yz - 2*Xy*Yiszz*Yy
+
+[561]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0)
+Monomial B_k   : r4*r5*r6**2
+Coeff G_ijk    : 2*Yisxy*Yx*Yz + 2*Yisxz*Yx*Yy
+
+[562]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0)
+Monomial B_k   : r4*r5*r6*r7
+Coeff G_ijk    : 2*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 2*Yisyz*Yx*Yy
+
+[563]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1)
+Monomial B_k   : r4*r5*r6*r8
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[564]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0)
+Monomial B_k   : r4*r5*r6
+Coeff G_ijk    : -2*Xz*Yisxy*Yz - 2*Xz*Yisxz*Yy
+
+[565]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 0)
+Monomial B_k   : r4*r5*r7**2
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[566]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1)
+Monomial B_k   : r4*r5*r7*r8
+Coeff G_ijk    : 2*Yisyy*Yz**2 + 4*Yisyz*Yy*Yz + 2*Yiszz*Yy**2
+
+[567]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0)
+Monomial B_k   : r4*r5*r7
+Coeff G_ijk    : -2*Xz*Yisyy*Yz - 2*Xz*Yisyz*Yy
+
+[568]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 2)
+Monomial B_k   : r4*r5*r8**2
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[569]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1)
+Monomial B_k   : r4*r5*r8
+Coeff G_ijk    : -2*Xz*Yisyz*Yz - 2*Xz*Yiszz*Yy
+
+[570]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0)
+Monomial B_k   : r4*r5
+Coeff G_ijk    : 2*Xisyy*Yy*Yz + 2*Xy**2*Yisyz
+
+[571]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0)
+Monomial B_k   : r4*r6**2
+Coeff G_ijk    : -2*Xy*Yisxy*Yx
+
+[572]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0)
+Monomial B_k   : r4*r6*r7
+Coeff G_ijk    : -2*Xy*Yisxy*Yy - 2*Xy*Yisyy*Yx
+
+[573]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1)
+Monomial B_k   : r4*r6*r8
+Coeff G_ijk    : -2*Xy*Yisxy*Yz - 2*Xy*Yisyz*Yx
+
+[574]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0)
+Monomial B_k   : r4*r6
+Coeff G_ijk    : 2*Xisyz*Yx*Yy + 2*Xy*Xz*Yisxy
+
+[575]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0)
+Monomial B_k   : r4*r7**2
+Coeff G_ijk    : -2*Xy*Yisyy*Yy
+
+[576]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1)
+Monomial B_k   : r4*r7*r8
+Coeff G_ijk    : -2*Xy*Yisyy*Yz - 2*Xy*Yisyz*Yy
+
+[577]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0)
+Monomial B_k   : r4*r7
+Coeff G_ijk    : 2*Xisyz*Yy**2 + 2*Xy*Xz*Yisyy
+
+[578]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2)
+Monomial B_k   : r4*r8**2
+Coeff G_ijk    : -2*Xy*Yisyz*Yz
+
+[579]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+Monomial B_k   : r4*r8
+Coeff G_ijk    : 2*Xisyz*Yy*Yz + 2*Xy*Xz*Yisyz
+
+[580]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+Monomial B_k   : r4
+Coeff G_ijk    : -2*Xisxy*Xx*Yy - 2*Xisyy*Xy*Yy - 2*Xisyz*Xz*Yy
+
+[581]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0)
+Monomial B_k   : r5**4
+Coeff G_ijk    : Yiszz*Yz**2
+
+[582]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0)
+Monomial B_k   : r5**3
+Coeff G_ijk    : -2*Xy*Yiszz*Yz
+
+[583]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0)
+Monomial B_k   : r5**2*r6**2
+Coeff G_ijk    : 2*Yisxz*Yx*Yz
+
+[584]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 0)
+Monomial B_k   : r5**2*r6*r7
+Coeff G_ijk    : 2*Yisxz*Yy*Yz + 2*Yisyz*Yx*Yz
+
+[585]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 1)
+Monomial B_k   : r5**2*r6*r8
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[586]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0)
+Monomial B_k   : r5**2*r6
+Coeff G_ijk    : -2*Xz*Yisxz*Yz
+
+[587]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0)
+Monomial B_k   : r5**2*r7**2
+Coeff G_ijk    : 2*Yisyz*Yy*Yz
+
+[588]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 1)
+Monomial B_k   : r5**2*r7*r8
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[589]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0)
+Monomial B_k   : r5**2*r7
+Coeff G_ijk    : -2*Xz*Yisyz*Yz
+
+[590]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2)
+Monomial B_k   : r5**2*r8**2
+Coeff G_ijk    : 2*Yiszz*Yz**2
+
+[591]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1)
+Monomial B_k   : r5**2*r8
+Coeff G_ijk    : -2*Xz*Yiszz*Yz
+
+[592]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0)
+Monomial B_k   : r5**2
+Coeff G_ijk    : Xisyy*Yz**2 + Xy**2*Yiszz
+
+[593]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0)
+Monomial B_k   : r5*r6**2
+Coeff G_ijk    : -2*Xy*Yisxz*Yx
+
+[594]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+Monomial B_k   : r5*r6*r7
+Coeff G_ijk    : -2*Xy*Yisxz*Yy - 2*Xy*Yisyz*Yx
+
+[595]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1)
+Monomial B_k   : r5*r6*r8
+Coeff G_ijk    : -2*Xy*Yisxz*Yz - 2*Xy*Yiszz*Yx
+
+[596]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0)
+Monomial B_k   : r5*r6
+Coeff G_ijk    : 2*Xisyz*Yx*Yz + 2*Xy*Xz*Yisxz
+
+[597]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0)
+Monomial B_k   : r5*r7**2
+Coeff G_ijk    : -2*Xy*Yisyz*Yy
+
+[598]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1)
+Monomial B_k   : r5*r7*r8
+Coeff G_ijk    : -2*Xy*Yisyz*Yz - 2*Xy*Yiszz*Yy
+
+[599]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0)
+Monomial B_k   : r5*r7
+Coeff G_ijk    : 2*Xisyz*Yy*Yz + 2*Xy*Xz*Yisyz
+
+[600]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2)
+Monomial B_k   : r5*r8**2
+Coeff G_ijk    : -2*Xy*Yiszz*Yz
+
+[601]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1)
+Monomial B_k   : r5*r8
+Coeff G_ijk    : 2*Xisyz*Yz**2 + 2*Xy*Xz*Yiszz
+
+[602]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+Monomial B_k   : r5
+Coeff G_ijk    : -2*Xisxy*Xx*Yz - 2*Xisyy*Xy*Yz - 2*Xisyz*Xz*Yz
+
+[603]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0)
+Monomial B_k   : r6**4
+Coeff G_ijk    : Yisxx*Yx**2
+
+[604]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0)
+Monomial B_k   : r6**3*r7
+Coeff G_ijk    : 2*Yisxx*Yx*Yy + 2*Yisxy*Yx**2
+
+[605]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1)
+Monomial B_k   : r6**3*r8
+Coeff G_ijk    : 2*Yisxx*Yx*Yz + 2*Yisxz*Yx**2
+
+[606]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0)
+Monomial B_k   : r6**3
+Coeff G_ijk    : -2*Xz*Yisxx*Yx
+
+[607]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0)
+Monomial B_k   : r6**2*r7**2
+Coeff G_ijk    : Yisxx*Yy**2 + 4*Yisxy*Yx*Yy + Yisyy*Yx**2
+
+[608]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1)
+Monomial B_k   : r6**2*r7*r8
+Coeff G_ijk    : 2*Yisxx*Yy*Yz + 4*Yisxy*Yx*Yz + 4*Yisxz*Yx*Yy + 2*Yisyz*Yx**2
+
+[609]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0)
+Monomial B_k   : r6**2*r7
+Coeff G_ijk    : -2*Xz*Yisxx*Yy - 4*Xz*Yisxy*Yx
+
+[610]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2)
+Monomial B_k   : r6**2*r8**2
+Coeff G_ijk    : Yisxx*Yz**2 + 4*Yisxz*Yx*Yz + Yiszz*Yx**2
+
+[611]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1)
+Monomial B_k   : r6**2*r8
+Coeff G_ijk    : -2*Xz*Yisxx*Yz - 4*Xz*Yisxz*Yx
+
+[612]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0)
+Monomial B_k   : r6**2
+Coeff G_ijk    : Xiszz*Yx**2 + Xz**2*Yisxx
+
+[613]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0)
+Monomial B_k   : r6*r7**3
+Coeff G_ijk    : 2*Yisxy*Yy**2 + 2*Yisyy*Yx*Yy
+
+[614]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1)
+Monomial B_k   : r6*r7**2*r8
+Coeff G_ijk    : 4*Yisxy*Yy*Yz + 2*Yisxz*Yy**2 + 2*Yisyy*Yx*Yz + 4*Yisyz*Yx*Yy
+
+[615]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0)
+Monomial B_k   : r6*r7**2
+Coeff G_ijk    : -4*Xz*Yisxy*Yy - 2*Xz*Yisyy*Yx
+
+[616]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2)
+Monomial B_k   : r6*r7*r8**2
+Coeff G_ijk    : 2*Yisxy*Yz**2 + 4*Yisxz*Yy*Yz + 4*Yisyz*Yx*Yz + 2*Yiszz*Yx*Yy
+
+[617]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1)
+Monomial B_k   : r6*r7*r8
+Coeff G_ijk    : -4*Xz*Yisxy*Yz - 4*Xz*Yisxz*Yy - 4*Xz*Yisyz*Yx
+
+[618]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0)
+Monomial B_k   : r6*r7
+Coeff G_ijk    : 2*Xiszz*Yx*Yy + 2*Xz**2*Yisxy
+
+[619]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3)
+Monomial B_k   : r6*r8**3
+Coeff G_ijk    : 2*Yisxz*Yz**2 + 2*Yiszz*Yx*Yz
+
+[620]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2)
+Monomial B_k   : r6*r8**2
+Coeff G_ijk    : -4*Xz*Yisxz*Yz - 2*Xz*Yiszz*Yx
+
+[621]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1)
+Monomial B_k   : r6*r8
+Coeff G_ijk    : 2*Xiszz*Yx*Yz + 2*Xz**2*Yisxz
+
+[622]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
+Monomial B_k   : r6
+Coeff G_ijk    : -2*Xisxz*Xx*Yx - 2*Xisyz*Xy*Yx - 2*Xiszz*Xz*Yx
+
+[623]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0)
+Monomial B_k   : r7**4
+Coeff G_ijk    : Yisyy*Yy**2
+
+[624]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1)
+Monomial B_k   : r7**3*r8
+Coeff G_ijk    : 2*Yisyy*Yy*Yz + 2*Yisyz*Yy**2
+
+[625]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0)
+Monomial B_k   : r7**3
+Coeff G_ijk    : -2*Xz*Yisyy*Yy
+
+[626]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2)
+Monomial B_k   : r7**2*r8**2
+Coeff G_ijk    : Yisyy*Yz**2 + 4*Yisyz*Yy*Yz + Yiszz*Yy**2
+
+[627]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1)
+Monomial B_k   : r7**2*r8
+Coeff G_ijk    : -2*Xz*Yisyy*Yz - 4*Xz*Yisyz*Yy
+
+[628]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0)
+Monomial B_k   : r7**2
+Coeff G_ijk    : Xiszz*Yy**2 + Xz**2*Yisyy
+
+[629]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3)
+Monomial B_k   : r7*r8**3
+Coeff G_ijk    : 2*Yisyz*Yz**2 + 2*Yiszz*Yy*Yz
+
+[630]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2)
+Monomial B_k   : r7*r8**2
+Coeff G_ijk    : -4*Xz*Yisyz*Yz - 2*Xz*Yiszz*Yy
+
+[631]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1)
+Monomial B_k   : r7*r8
+Coeff G_ijk    : 2*Xiszz*Yy*Yz + 2*Xz**2*Yisyz
+
+[632]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+Monomial B_k   : r7
+Coeff G_ijk    : -2*Xisxz*Xx*Yy - 2*Xisyz*Xy*Yy - 2*Xiszz*Xz*Yy
+
+[633]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4)
+Monomial B_k   : r8**4
+Coeff G_ijk    : Yiszz*Yz**2
+
+[634]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3)
+Monomial B_k   : r8**3
+Coeff G_ijk    : -2*Xz*Yiszz*Yz
+
+[635]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2)
+Monomial B_k   : r8**2
+Coeff G_ijk    : Xiszz*Yz**2 + Xz**2*Yiszz
+
+[636]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+Monomial B_k   : r8
+Coeff G_ijk    : -2*Xisxz*Xx*Yz - 2*Xisyz*Xy*Yz - 2*Xiszz*Xz*Yz
+
+[637]
+Exponent tuple : (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Monomial B_k   : 1
+Coeff G_ijk    : Xisxx*Xx**2 + 2*Xisxy*Xx*Xy + 2*Xisxz*Xx*Xz + Xisyy*Xy**2 + 2*Xisyz*Xy*Xz + Xiszz*Xz**2
+

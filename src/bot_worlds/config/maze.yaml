@@ -1,0 +1,8 @@
+world:
+  sdf: "worlds/maze.sdf"
+
+spawn:
+  x: 1.0
+  y: 1.0
+  z: 0.05
+  yaw: 0.0

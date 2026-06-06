@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot name="bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="lidar_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://bot_description/meshes/laser_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.35 0.05 0.08 1.0" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.0127 0.0 -0.0151" rpy="0 0 0" />
+            <geometry>
+                <box size="0.0975 0.072 0.054" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="-0.011945780406062 -0.000381929217680526 -0.0170649378129477" rpy="0 0 0" />
+            <mass value="0.073084435549317" />
+            <inertia ixx="1.96074931730795E-05" ixy="-3.62091076640009E-07" ixz="4.28230084046735E-07" 
+                                                iyy="2.40983835136327E-05"  iyz="1.50180909250652E-08" 
+                                                                            izz="4.14184164228595E-05" />
+
+        </inertial>
+    </link>
+
+    <joint name="base_lidar_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="lidar_link" />
+        <origin xyz="0 0 0.1208" rpy="0 0 ${pi}" />
+    </joint>
+
+    
+
+</robot>

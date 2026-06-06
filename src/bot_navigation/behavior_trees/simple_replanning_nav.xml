@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="Untitled">
+    <PipelineSequence>
+      <RateController hz="2">
+        <ComputePathToPose goal="{goal}"
+                           planner_id="SmacPlanner"
+                           path="{path}"/>
+      </RateController>
+      <FollowPath controller_id="RegulatedPurePursuit"
+                  path="{path}"
+                  goal_checker_id="general_goal_checker"
+                  progress_checker_id="progress_checker"/>
+    </PipelineSequence>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="ComputePathToPose">
+      <input_port name="goal">Destination to plan to</input_port>
+      <input_port name="start">Use as the planner start pose instead of the current robot pose, if use_start is not false (i.e. not provided or set to true)</input_port>
+      <input_port name="use_start">For using or not using (i.e. ignoring) the provided start pose</input_port>
+      <input_port name="planner_id">Mapped name to the planner plugin type to use</input_port>
+      <input_port name="server_name">Server name</input_port>
+      <input_port name="server_timeout">Server timeout</input_port>
+      <output_port name="path">Path created by ComputePathToPose node</output_port>
+      <output_port name="error_code_id">"Compute path to pose error code"</output_port>
+    </Action>
+    <Action ID="FollowPath">
+      <input_port name="controller_id"
+                  default="FollowPath"/>
+      <input_port name="path">Path to follow</input_port>
+      <input_port name="goal_checker_id">Goal checker</input_port>
+      <input_port name="progress_checker_id">Progress checker</input_port>
+      <input_port name="server_name">Action server name</input_port>
+      <input_port name="server_timeout">Server timeout</input_port>
+      <output_port name="error_code_id">Follow Path error code</output_port>
+    </Action>
+    <Control ID="PipelineSequence"/>
+    <Decorator ID="RateController">
+      <input_port name="hz">Rate</input_port>
+    </Decorator>
+  </TreeNodesModel>
+
+</root>

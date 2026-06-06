@@ -1,0 +1,13 @@
+#Goal
+PointWithCovarianceArray x0
+PointWithCovarianceArray y0
+bool has_initial_guess
+geometry_msgs/Pose initial_guess
+---
+#Result
+bot_interfaces/RelativePoseWithCovarianceStamped relative_pose
+bool converged
+string message
+---
+#Feedback
+string stage

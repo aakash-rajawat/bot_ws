@@ -1,0 +1,19 @@
+# default values in comments
+wheel_odometry_parametric:
+  ros__parameters:
+    left_wheel_radius: 0.033    # 0.033
+    right_wheel_radius: 0.033   # 0.033
+    wheel_separation: 0.17      # 0.17
+    com_y_offset: 0.0           # 0.0
+
+    left_wheel_radius_stddev: 0.001   # 0.001
+    right_wheel_radius_stddev: 0.001  # 0.001
+    wheel_separation_stddev: 0.001    # 0.001
+    com_y_offset_stddev: 0.0005       # 0.0005
+
+    left_encoder_position_stddev: 0.0018    # 0.0018
+    right_encoder_position_stddev: 0.0018   # 0.0018
+    increment_pose_covariance_regularization: 1.0e-9  # keeps relative wheel covariance positive definite
+
+    unused_pose_variance: 1000000.0   # 1000000.0
+    unused_twist_variance: 1000000.0  # 1000000.0

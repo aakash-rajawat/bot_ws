@@ -1,0 +1,12 @@
+#Request
+uint32[] selected_cam_ids
+builtin_interfaces/Time[] selected_stamps
+bool choose_ref
+uint32 ref_cam_id
+---
+#Response
+bool success
+string message
+uint32 ref_cam_id
+builtin_interfaces/Time ref_stamp
+bot_interfaces/MatchedViewPair[] matched_pairs

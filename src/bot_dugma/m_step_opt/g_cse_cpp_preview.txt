@@ -1,0 +1,117 @@
+CSE preview for first batch of G_k expressions
+=============================================
+
+Preview count: 20
+Number of CSE temporaries: 4
+
+Temporaries
+-----------
+
+const float x0 = 2*Yisxy;
+const float x1 = 2*Yisxz;
+const float x2 = 2*Yisyz;
+const float x3 = 2*Yisxx;
+
+Reduced coefficient assignments
+-------------------------------
+
+// k = 1
+// Exponent tuple : (2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r0**2*tx**2
+const float G_1 = Yisxx;
+
+// k = 2
+// Exponent tuple : (2, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r0*r1*tx**2
+const float G_2 = x0;
+
+// k = 3
+// Exponent tuple : (2, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r0*r2*tx**2
+const float G_3 = x1;
+
+// k = 4
+// Exponent tuple : (2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r1**2*tx**2
+const float G_4 = Yisyy;
+
+// k = 5
+// Exponent tuple : (2, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r1*r2*tx**2
+const float G_5 = x2;
+
+// k = 6
+// Exponent tuple : (2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : r2**2*tx**2
+const float G_6 = Yiszz;
+
+// k = 7
+// Exponent tuple : (2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : tx**2
+const float G_7 = Xisxx;
+
+// k = 8
+// Exponent tuple : (1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0)
+// B_k(u)         : r0*r3*tx*ty
+const float G_8 = x3;
+
+// k = 9
+// Exponent tuple : (1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+// B_k(u)         : r0*r4*tx*ty
+const float G_9 = x0;
+
+// k = 10
+// Exponent tuple : (1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
+// B_k(u)         : r0*r5*tx*ty
+const float G_10 = x1;
+
+// k = 11
+// Exponent tuple : (1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+// B_k(u)         : r1*r3*tx*ty
+const float G_11 = x0;
+
+// k = 12
+// Exponent tuple : (1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0)
+// B_k(u)         : r1*r4*tx*ty
+const float G_12 = 2*Yisyy;
+
+// k = 13
+// Exponent tuple : (1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+// B_k(u)         : r1*r5*tx*ty
+const float G_13 = x2;
+
+// k = 14
+// Exponent tuple : (1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0)
+// B_k(u)         : r2*r3*tx*ty
+const float G_14 = x1;
+
+// k = 15
+// Exponent tuple : (1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
+// B_k(u)         : r2*r4*tx*ty
+const float G_15 = x2;
+
+// k = 16
+// Exponent tuple : (1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0)
+// B_k(u)         : r2*r5*tx*ty
+const float G_16 = 2*Yiszz;
+
+// k = 17
+// Exponent tuple : (1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+// B_k(u)         : tx*ty
+const float G_17 = 2*Xisxy;
+
+// k = 18
+// Exponent tuple : (1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0)
+// B_k(u)         : r0*r6*tx*tz
+const float G_18 = x3;
+
+// k = 19
+// Exponent tuple : (1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0)
+// B_k(u)         : r0*r7*tx*tz
+const float G_19 = x0;
+
+// k = 20
+// Exponent tuple : (1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1)
+// B_k(u)         : r0*r8*tx*tz
+const float G_20 = x1;
+

@@ -1,0 +1,8 @@
+joystick:
+  ros__parameters:
+    dev: /dev/input/js0
+    dev_name: "Sony Interactive Entertainment DualSense Wireless Controller"
+    deadzone: 0.5
+    autorepeat_rate: 20.0
+    sticky_buttons: false
+    coalesce_interval_ms: 1

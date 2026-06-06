@@ -1,0 +1,34 @@
+{
+  "name": "bot_ws",
+  "hostRequirements": {
+    "gpu": true
+  },
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dev"
+  },
+  "remoteUser": "ubuntu",
+  "containerUser": "ubuntu",
+  "workspaceFolder": "/workspaces/bot_ws",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/bot_ws,type=bind",
+  "postCreateCommand": "bash scripts/first_run_workspace_setup.sh",
+  "mounts": [
+    "source=/dev/input,target=/dev/input,type=bind"
+  ],
+  "runArgs": [
+    "--network=host",
+    "--device-cgroup-rule=c 13:* rmw",
+    "--gpus=all"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-iot.vscode-ros",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

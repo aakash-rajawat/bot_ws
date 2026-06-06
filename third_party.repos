@@ -1,0 +1,9 @@
+repositories:
+  ROPTLIB:
+    type: git
+    url: https://github.com/whuang08/ROPTLIB
+    version: 9d9e9325cabf5c8b8e4cc87e0a5c17a366e63cbd
+  accelerated_features:
+    type: git
+    url: https://github.com/verlab/accelerated_features.git
+    version: e92685f57f8318b18725c5c8c0bd28c7fe188d9a

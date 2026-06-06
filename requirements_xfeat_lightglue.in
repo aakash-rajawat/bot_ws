@@ -1,0 +1,13 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+gdown==5.2.1
+kornia==0.7.2
+kornia_rs==0.1.10
+matplotlib==3.10.8
+numpy==1.26.4
+opencv-contrib-python-headless==4.10.0.84
+poselib==2.0.5
+PyYAML==6.0.2
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+tqdm==4.67.3

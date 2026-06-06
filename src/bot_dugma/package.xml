@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>bot_dugma</name>
+  <version>0.0.0</version>
+  <description>CUDA-accelerated DUGMA registration library.</description>
+  <maintainer email="sandbox@todo.todo">sandbox</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>eigen</depend>
+  <depend>libblas-dev</depend>
+  <depend>liblapack-dev</depend>
+  <depend>libfftw3</depend>
+  <depend>f2c</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -14,23 +14,18 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(nav_msgs REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(tf2_ros REQUIRED)
 find_package(bot_interfaces REQUIRED)
 
 include_directories(include)
 
 add_executable(wheel_odometry_parametric src/wheel_odometry_parametric.cpp)
-# ament_target_dependencies(wheel_odometry_parametric rclcpp geometry_msgs sensor_msgs nav_msgs tf2 tf2_ros ${Eigen_LIBRARIES})
 ament_target_dependencies(
   wheel_odometry_parametric 
   rclcpp 
   geometry_msgs 
   sensor_msgs 
-  nav_msgs 
   tf2 
-  tf2_ros
   bot_interfaces
 )
 target_link_libraries(wheel_odometry_parametric Eigen3::Eigen)

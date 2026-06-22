@@ -25,17 +25,6 @@ ament_target_dependencies(
   sensor_msgs
 )
 
-add_executable(odometry_ekf src/odometry_ekf.cpp)
-ament_target_dependencies(
-  odometry_ekf
-  rclcpp
-  nav_msgs
-  sensor_msgs
-  geometry_msgs
-  tf2
-  tf2_ros
-)
-
 add_executable(gtsam_pose_slam src/gtsam_pose_slam.cpp)
 ament_target_dependencies(
   gtsam_pose_slam
@@ -47,8 +36,6 @@ ament_target_dependencies(
   tf2_geometry_msgs
 )
 target_link_libraries(gtsam_pose_slam gtsam Eigen3::Eigen)
-
-target_link_libraries(odometry_ekf Eigen3::Eigen)
 
 install(
   DIRECTORY include/
@@ -62,7 +49,6 @@ install(
 
 install(TARGETS
   imu_republisher
-  odometry_ekf
   gtsam_pose_slam
   DESTINATION lib/${PROJECT_NAME}
 )

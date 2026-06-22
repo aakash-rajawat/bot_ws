@@ -12,7 +12,6 @@ def generate_launch_description():
     bot_bringup_dir = get_package_share_directory("bot_bringup")
     bot_controller_dir = get_package_share_directory("bot_controller")
     bot_description_dir = get_package_share_directory("bot_description")
-    bot_localization_dir = get_package_share_directory("bot_localization")
     bot_mapping_dir = get_package_share_directory("bot_mapping")
     bot_navigation_dir = get_package_share_directory("bot_navigation")
     bot_worlds_dir = get_package_share_directory("bot_worlds")
@@ -49,16 +48,6 @@ def generate_launch_description():
         description="Absolute path to wheel odometry parametric config file",
     )
 
-    odometry_ekf_config_arg = DeclareLaunchArgument(
-        "odometry_ekf_config",
-        default_value=os.path.join(
-            bot_localization_dir,
-            "config",
-            "odometry_ekf.yaml",
-        ),
-        description="Absolute path to odometry EKF config file",
-    )
-
     slam_config_arg = DeclareLaunchArgument(
         "slam_config",
         default_value=os.path.join(
@@ -80,7 +69,6 @@ def generate_launch_description():
             "wheel_odometry_parametric_config": LaunchConfiguration(
                 "wheel_odometry_parametric_config"
             ),
-            "odometry_ekf_config": LaunchConfiguration("odometry_ekf_config"),
         }.items(),
     )
 
@@ -113,7 +101,6 @@ def generate_launch_description():
         world_config_arg,
         controller_config_arg,
         wheel_odometry_parametric_config_arg,
-        odometry_ekf_config_arg,
         slam_config_arg,
         no_gui_bringup,
         slam,

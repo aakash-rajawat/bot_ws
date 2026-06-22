@@ -13,7 +13,6 @@ from launch_ros.actions import Node
 def generate_launch_description():
     bot_description_dir = get_package_share_directory("bot_description")
     bot_controller_dir = get_package_share_directory("bot_controller")
-    bot_localization_dir = get_package_share_directory("bot_localization")
 
     model_arg = DeclareLaunchArgument(
         "model",
@@ -40,16 +39,6 @@ def generate_launch_description():
             # "wheel_odometry_parametric_bad.yaml",
         ),
         description="Absolute path to wheel odometry parametric config file",
-    )
-
-    odometry_ekf_config_arg = DeclareLaunchArgument(
-        "odometry_ekf_config",
-        default_value=os.path.join(
-            bot_localization_dir,
-            "config",
-            "odometry_ekf.yaml",
-        ),
-        description="Absolute path to odometry EKF config file",
     )
 
     gazebo = IncludeLaunchDescription(
@@ -95,14 +84,6 @@ def generate_launch_description():
         parameters=[LaunchConfiguration("wheel_odometry_parametric_config")],
     )
 
-    odometry_ekf = Node(
-        package="bot_localization",
-        executable="odometry_ekf",
-        name="odometry_ekf",
-        output="screen",
-        parameters=[LaunchConfiguration("odometry_ekf_config")],
-    )
-
     joystick_teleop = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(bot_controller_dir, "launch", "joystick_teleop.launch.py")
@@ -127,12 +108,10 @@ def generate_launch_description():
         model_arg,
         controller_config_arg,
         wheel_odometry_parametric_config_arg,
-        odometry_ekf_config_arg,
         gazebo,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,
         wheel_odometry_parametric,
-        odometry_ekf,
         joystick_teleop,
         rviz,
     ])

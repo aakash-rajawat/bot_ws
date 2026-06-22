@@ -16,4 +16,3 @@ wheel_odometry_parametric:
     increment_pose_covariance_regularization: 1.0e-9  # keeps relative wheel covariance positive definite
 
     unused_pose_variance: 1000000.0   # 1000000.0
-    unused_twist_variance: 1000000.0  # 1000000.0

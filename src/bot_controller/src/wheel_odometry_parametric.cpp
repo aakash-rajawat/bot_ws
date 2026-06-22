@@ -77,9 +77,6 @@ WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
     declare_parameter("unused_pose_variance", 1.0e6);
     m_unused_pose_variance = get_parameter("unused_pose_variance").as_double();
 
-    declare_parameter("unused_twist_variance", 1.0e6);
-    m_unused_twist_variance = get_parameter("unused_twist_variance").as_double();
-
     declare_parameter<std::string>(
         "topic_incremental_pose",
         "/bot_controller/relative_pose_wheel"
@@ -96,10 +93,6 @@ WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
         std::bind(&WheelOdometryParametric::jointCallback, this, std::placeholders::_1));
 
     constexpr int pubQOS {10};
-    m_odom_pub = create_publisher<nav_msgs::msg::Odometry>(
-        "/bot_controller/odom_noisy_temp",
-        pubQOS);
-
     m_pose_pub = create_publisher<geometry_msgs::msg::PoseStamped>(
         "/wheel_odometry/pose",
         pubQOS
@@ -109,17 +102,6 @@ WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
         m_topic_incremental_pose,
         pubQOS
     );
-
-    m_odom_msg.header.frame_id = "odom";
-    m_odom_msg.child_frame_id = "base_footprint_noisy_temp";
-    m_odom_msg.pose.pose.orientation.x = 0.0;
-    m_odom_msg.pose.pose.orientation.y = 0.0;
-    m_odom_msg.pose.pose.orientation.z = 0.0;
-    m_odom_msg.pose.pose.orientation.w = 1.0;
-
-    m_transform_broadcaster = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
-    m_transform_stamped.header.frame_id = "odom";
-    m_transform_stamped.child_frame_id = "base_footprint_noisy_temp";
 
     RCLCPP_INFO_STREAM(get_logger(),
                        "wheel_odometry_parametric node initialised with\n"
@@ -140,7 +122,6 @@ WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
 void WheelOdometryParametric::resetCovariances()
 {
     m_twist_covariance.setZero();
-    m_pose_covariance.setZero();
     m_increment_pose_covariance.setZero();
 }
 
@@ -208,23 +189,8 @@ void WheelOdometryParametric::updateTwistCovariance(
     m_twist_covariance = j_tw * q * j_tw.transpose();
 }
 
-void WheelOdometryParametric::updatePoseCovariance(double dt_sec, double previous_heading)
+void WheelOdometryParametric::updateIncrementPoseCovariance(double dt_sec)
 {
-    const double alpha = previous_heading + (dt_sec * m_angular_vel / 2.0);
-    const double cos_alpha = std::cos(alpha);
-    const double sin_alpha = std::sin(alpha);
-
-    Matrix3d f = Matrix3d::Identity();
-    f(0, 2) = -dt_sec * m_linear_vel * sin_alpha;
-    f(1, 2) = dt_sec * m_linear_vel * cos_alpha;
-
-    Matrix3x2d l = Matrix3x2d::Zero();
-    l(0, 0) = dt_sec * cos_alpha;
-    l(0, 1) = -0.5 * dt_sec * dt_sec * m_linear_vel * sin_alpha;
-    l(1, 0) = dt_sec * sin_alpha;
-    l(1, 1) = 0.5 * dt_sec * dt_sec * m_linear_vel * cos_alpha;
-    l(2, 1) = dt_sec;
-
     const double increment_alpha = 0.5 * dt_sec * m_angular_vel;
     const double cos_increment_alpha = std::cos(increment_alpha);
     const double sin_increment_alpha = std::sin(increment_alpha);
@@ -239,9 +205,6 @@ void WheelOdometryParametric::updatePoseCovariance(double dt_sec, double previou
     m_increment_pose_covariance = l_increment * m_twist_covariance * l_increment.transpose();
     m_increment_pose_covariance +=
         m_increment_pose_covariance_regularization * Matrix3d::Identity();
-
-    m_pose_covariance = (f * m_pose_covariance * f.transpose()) +
-                        (l * m_twist_covariance * l.transpose());
 }
 
 void WheelOdometryParametric::fillIncrementalPoseMessage(
@@ -293,55 +256,6 @@ void WheelOdometryParametric::fillIncrementalPoseMessage(
     m_incremental_pose_msg.pose.covariance[28] = m_unused_pose_variance;
 }
 
-void WheelOdometryParametric::fillOdometryMessage(const rclcpp::Time& stamp)
-{
-    tf2::Quaternion q {};
-    q.setRPY(0, 0, m_psi);
-
-    m_odom_msg.header.stamp = stamp;
-    m_odom_msg.pose.pose.position.x = m_pos_x;
-    m_odom_msg.pose.pose.position.y = m_pos_y;
-    m_odom_msg.pose.pose.orientation.x = q.x();
-    m_odom_msg.pose.pose.orientation.y = q.y();
-    m_odom_msg.pose.pose.orientation.z = q.z();
-    m_odom_msg.pose.pose.orientation.w = q.w();
-    m_odom_msg.twist.twist.linear.x = m_linear_vel;
-    m_odom_msg.twist.twist.angular.z = m_angular_vel;
-
-    m_odom_msg.pose.covariance.fill(0.0);
-    m_odom_msg.twist.covariance.fill(0.0);
-
-    m_odom_msg.pose.covariance[0] = m_pose_covariance(0, 0);
-    m_odom_msg.pose.covariance[1] = m_pose_covariance(0, 1);
-    m_odom_msg.pose.covariance[5] = m_pose_covariance(0, 2);
-    m_odom_msg.pose.covariance[6] = m_pose_covariance(1, 0);
-    m_odom_msg.pose.covariance[7] = m_pose_covariance(1, 1);
-    m_odom_msg.pose.covariance[11] = m_pose_covariance(1, 2);
-    m_odom_msg.pose.covariance[30] = m_pose_covariance(2, 0);
-    m_odom_msg.pose.covariance[31] = m_pose_covariance(2, 1);
-    m_odom_msg.pose.covariance[35] = m_pose_covariance(2, 2);
-    m_odom_msg.pose.covariance[14] = m_unused_pose_variance;
-    m_odom_msg.pose.covariance[21] = m_unused_pose_variance;
-    m_odom_msg.pose.covariance[28] = m_unused_pose_variance;
-
-    m_odom_msg.twist.covariance[0] = m_twist_covariance(0, 0);
-    m_odom_msg.twist.covariance[5] = m_twist_covariance(0, 1);
-    m_odom_msg.twist.covariance[30] = m_twist_covariance(1, 0);
-    m_odom_msg.twist.covariance[35] = m_twist_covariance(1, 1);
-    m_odom_msg.twist.covariance[7] = m_unused_twist_variance;
-    m_odom_msg.twist.covariance[14] = m_unused_twist_variance;
-    m_odom_msg.twist.covariance[21] = m_unused_twist_variance;
-    m_odom_msg.twist.covariance[28] = m_unused_twist_variance;
-
-    m_transform_stamped.header.stamp = stamp;
-    m_transform_stamped.transform.translation.x = m_pos_x;
-    m_transform_stamped.transform.translation.y = m_pos_y;
-    m_transform_stamped.transform.rotation.x = q.x();
-    m_transform_stamped.transform.rotation.y = q.y();
-    m_transform_stamped.transform.rotation.z = q.z();
-    m_transform_stamped.transform.rotation.w = q.w();
-}
-
 void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& msg)
 {
     auto left_it = std::find(msg.name.begin(), msg.name.end(), "base_lw_joint");
@@ -383,7 +297,6 @@ void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& 
     }
 
     const rclcpp::Time previous_stamp = m_prev_time;
-    const double previous_heading = m_psi;
     const double wheel_rate_left = dp_left / dt_sec;
     const double wheel_rate_right = dp_right / dt_sec;
 
@@ -393,15 +306,21 @@ void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& 
 
     computeWheelOdometry(dp_left, dp_right, dt_sec);
     updateTwistCovariance(wheel_rate_left, wheel_rate_right, dt_sec);
-    updatePoseCovariance(dt_sec, previous_heading);
-    fillOdometryMessage(msg_time);
-
-    m_odom_pub->publish(m_odom_msg);
-    m_transform_broadcaster->sendTransform(m_transform_stamped);
+    updateIncrementPoseCovariance(dt_sec);
 
     geometry_msgs::msg::PoseStamped stamped_pose {};
-    stamped_pose.header = m_odom_msg.header;
-    stamped_pose.pose = m_odom_msg.pose.pose;
+    stamped_pose.header.stamp = msg_time;
+    stamped_pose.header.frame_id = "odom";
+    stamped_pose.pose.position.x = m_pos_x;
+    stamped_pose.pose.position.y = m_pos_y;
+    stamped_pose.pose.position.z = 0.0;
+
+    tf2::Quaternion q {};
+    q.setRPY(0.0, 0.0, m_psi);
+    stamped_pose.pose.orientation.x = q.x();
+    stamped_pose.pose.orientation.y = q.y();
+    stamped_pose.pose.orientation.z = q.z();
+    stamped_pose.pose.orientation.w = q.w();
     m_pose_pub->publish(stamped_pose);
 
     if(!isValidCovariance3(m_increment_pose_covariance))

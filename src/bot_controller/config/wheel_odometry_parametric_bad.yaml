@@ -14,4 +14,3 @@ wheel_odometry_parametric:
     right_encoder_position_stddev: 0.0022
 
     unused_pose_variance: 1000000.0
-    unused_twist_variance: 1000000.0

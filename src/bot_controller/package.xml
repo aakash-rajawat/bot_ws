@@ -24,9 +24,7 @@
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
   <depend>eigen</depend>
-  <depend>nav_msgs</depend>
   <depend>tf2</depend>
-  <depend>tf2_ros</depend>
   <depend>bot_interfaces</depend>
 
 

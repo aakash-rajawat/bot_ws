@@ -100,4 +100,4 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && bash scripts/bootstrap_workspace_venvs.sh /workspaces/bot_ws \
     && rm -rf build log
 
-CMD ["bash", "-lc", "source /opt/ros/jazzy/setup.bash && source /workspaces/bot_ws/install/setup.bash && ros2 launch bot_bringup vision_container_v1.launch.py"]
+CMD ["bash", "-lc", "source /opt/ros/jazzy/setup.bash && source /workspaces/bot_ws/install/setup.bash && ros2 launch bot_bringup vision_container.launch.py"]

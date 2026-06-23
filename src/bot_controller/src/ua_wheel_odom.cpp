@@ -105,7 +105,7 @@ UAWheelOdom::UAWheelOdom(const std::string& name)
     );
 
     RCLCPP_INFO_STREAM(get_logger(),
-                       "wheel_odometry_parametric node initialised with\n"
+                       "ua_wheel_odom node initialised with\n"
                            << "left wheel radius: " << m_left_wheel_radius << " m\n"
                            << "right wheel radius: " << m_right_wheel_radius << " m\n"
                            << "wheel separation: " << m_wheel_separation << " m\n"
@@ -357,7 +357,7 @@ void UAWheelOdom::jointCallback(const sensor_msgs::msg::JointState& msg)
 int main(int argc, char* argv[])
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<UAWheelOdom>("wheel_odometry_parametric"));
+    rclcpp::spin(std::make_shared<UAWheelOdom>("ua_wheel_odom"));
     rclcpp::shutdown();
 
     return 0;

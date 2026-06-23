@@ -43,14 +43,14 @@ def generate_launch_description():
         description="Absolute path to diff drive controller config file",
     )
 
-    wheel_odometry_parametric_config_arg = DeclareLaunchArgument(
-        "wheel_odometry_parametric_config",
+    ua_wheel_odom_config_arg = DeclareLaunchArgument(
+        "ua_wheel_odom_config",
         default_value=os.path.join(
             bot_controller_dir,
             "config",
-            "wheel_odometry_parametric.yaml",
+            "ua_wheel_odom.yaml",
         ),
-        description="Absolute path to wheel odometry parametric config file",
+        description="Absolute path to uncertainty-aware wheel odometry config file",
     )
 
     gazebo = IncludeLaunchDescription(
@@ -146,13 +146,13 @@ def generate_launch_description():
         }],
     )
 
-    wheel_odometry_parametric = Node(
+    ua_wheel_odom = Node(
         package="bot_controller",
-        executable="wheel_odometry_parametric",
-        name="wheel_odometry_parametric",
+        executable="ua_wheel_odom",
+        name="ua_wheel_odom",
         output="screen",
         parameters=[
-            LaunchConfiguration("wheel_odometry_parametric_config"),
+            LaunchConfiguration("ua_wheel_odom_config"),
             {
                 "use_sim_time": True,
             },
@@ -259,7 +259,7 @@ def generate_launch_description():
         model_arg,
         world_config_arg,
         controller_config_arg,
-        wheel_odometry_parametric_config_arg,
+        ua_wheel_odom_config_arg,
         gazebo,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,
@@ -268,7 +268,7 @@ def generate_launch_description():
         xfeat_lightglue_server,
         vision_frontend,
         ua_lidar_point_cloud,
-        wheel_odometry_parametric,
+        ua_wheel_odom,
         mle_relative_pose_server_lidar,
         mle_relative_pose_server_triangulation,
         mle_relative_pose_client_lidar,

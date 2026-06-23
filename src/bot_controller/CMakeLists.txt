@@ -19,16 +19,16 @@ find_package(bot_interfaces REQUIRED)
 
 include_directories(include)
 
-add_executable(wheel_odometry_parametric src/ua_wheel_odom.cpp)
+add_executable(ua_wheel_odom src/ua_wheel_odom.cpp)
 ament_target_dependencies(
-  wheel_odometry_parametric 
+  ua_wheel_odom
   rclcpp 
   geometry_msgs 
   sensor_msgs 
   tf2 
   bot_interfaces
 )
-target_link_libraries(wheel_odometry_parametric Eigen3::Eigen)
+target_link_libraries(ua_wheel_odom Eigen3::Eigen)
 
 add_executable(twist_relay src/twist_relay.cpp)
 ament_target_dependencies(twist_relay rclcpp geometry_msgs)
@@ -44,7 +44,7 @@ install(
 )
 
 install(TARGETS
-  wheel_odometry_parametric
+  ua_wheel_odom
   twist_relay
   DESTINATION lib/${PROJECT_NAME}
 )

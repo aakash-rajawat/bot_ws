@@ -1,4 +1,4 @@
-#include "bot_controller/wheel_odometry_parametric.hpp"
+#include "bot_controller/ua_wheel_odom.hpp"
 
 #include <tf2/LinearMath/Quaternion.h>
 
@@ -30,7 +30,7 @@ namespace
     }
 }
 
-WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
+UAWheelOdom::UAWheelOdom(const std::string& name)
     : Node(name),
       m_left_wheel_previous_position(0.0),
       m_right_wheel_previous_position(0.0),
@@ -84,13 +84,14 @@ WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
     m_topic_incremental_pose = get_parameter("topic_incremental_pose").as_string();
 
     m_prev_time = get_clock()->now();
+    computeSigmaStaticPrecomputes();
     resetCovariances();
 
     constexpr int subQOS {10};
     m_joint_sub = create_subscription<sensor_msgs::msg::JointState>(
         "/joint_states",
         subQOS,
-        std::bind(&WheelOdometryParametric::jointCallback, this, std::placeholders::_1));
+        std::bind(&UAWheelOdom::jointCallback, this, std::placeholders::_1));
 
     constexpr int pubQOS {10};
     m_pose_pub = create_publisher<geometry_msgs::msg::PoseStamped>(
@@ -119,13 +120,12 @@ WheelOdometryParametric::WheelOdometryParametric(const std::string& name)
                            << m_increment_pose_covariance_regularization);
 }
 
-void WheelOdometryParametric::resetCovariances()
+void UAWheelOdom::resetCovariances()
 {
-    m_twist_covariance.setZero();
     m_increment_pose_covariance.setZero();
 }
 
-void WheelOdometryParametric::computeWheelOdometry(double dp_left, double dp_right, double dt_sec)
+void UAWheelOdom::computeWheelOdometry(double dp_left, double dp_right, double dt_sec)
 {
     const double left_wheel_angular_velocity = dp_left / dt_sec;
     const double right_wheel_angular_velocity = dp_right / dt_sec;
@@ -148,66 +148,83 @@ void WheelOdometryParametric::computeWheelOdometry(double dp_left, double dp_rig
     m_psi += dt_sec * m_angular_vel;
 }
 
-void WheelOdometryParametric::updateTwistCovariance(
-    double wheel_rate_left,
-    double wheel_rate_right,
-    double dt_sec)
+void UAWheelOdom::computeSigmaStaticPrecomputes()
 {
-    const double sigma_w_left = std::sqrt(2.0) * m_left_encoder_position_stddev / dt_sec;
-    const double sigma_w_right = std::sqrt(2.0) * m_right_encoder_position_stddev / dt_sec;
+    const double y_c = m_com_y_offset;
+    const double b = m_wheel_separation;
+    const double r_L = m_left_wheel_radius;
+    const double r_R = m_right_wheel_radius;
+    const double sigma_yc = m_com_y_offset_stddev;
+    const double sigma_b = m_wheel_separation_stddev;
+    const double sigma_rL = m_left_wheel_radius_stddev;
+    const double sigma_rR = m_right_wheel_radius_stddev;
+    const double sigma_phi_L = m_left_encoder_position_stddev;
+    const double sigma_phi_R = m_right_encoder_position_stddev;
 
-    Matrix6d q = Matrix6d::Zero();
-    q(0, 0) = m_com_y_offset_stddev * m_com_y_offset_stddev;
-    q(1, 1) = m_wheel_separation_stddev * m_wheel_separation_stddev;
-    q(2, 2) = m_left_wheel_radius_stddev * m_left_wheel_radius_stddev;
-    q(3, 3) = m_right_wheel_radius_stddev * m_right_wheel_radius_stddev;
-    q(4, 4) = sigma_w_left * sigma_w_left;
-    q(5, 5) = sigma_w_right * sigma_w_right;
+    using std::pow;
+#include "generated/wheel_odom_sigma_static_precomputes.inl"
 
-    Matrix2x6d j_tw = Matrix2x6d::Zero();
-    j_tw(0, 0) = ((m_right_wheel_radius * wheel_rate_right) -
-                  (m_left_wheel_radius * wheel_rate_left)) /
-                 m_wheel_separation;
-    j_tw(0, 1) = -m_com_y_offset *
-                 ((m_right_wheel_radius * wheel_rate_right) -
-                  (m_left_wheel_radius * wheel_rate_left)) /
-                 (m_wheel_separation * m_wheel_separation);
-    j_tw(0, 2) = wheel_rate_left * (0.5 - (m_com_y_offset / m_wheel_separation));
-    j_tw(0, 3) = wheel_rate_right * (0.5 + (m_com_y_offset / m_wheel_separation));
-    j_tw(0, 4) = m_left_wheel_radius * (0.5 - (m_com_y_offset / m_wheel_separation));
-    j_tw(0, 5) = m_right_wheel_radius * (0.5 + (m_com_y_offset / m_wheel_separation));
-
-    j_tw(1, 0) = 0.0;
-    j_tw(1, 1) = -((m_right_wheel_radius * wheel_rate_right) -
-                   (m_left_wheel_radius * wheel_rate_left)) /
-                 (m_wheel_separation * m_wheel_separation);
-    j_tw(1, 2) = -wheel_rate_left / m_wheel_separation;
-    j_tw(1, 3) = wheel_rate_right / m_wheel_separation;
-    j_tw(1, 4) = -m_left_wheel_radius / m_wheel_separation;
-    j_tw(1, 5) = m_right_wheel_radius / m_wheel_separation;
-
-    m_twist_covariance = j_tw * q * j_tw.transpose();
+    m_q_static_0 = q_static_0;
+    m_q_static_1 = q_static_1;
+    m_q_static_2 = q_static_2;
+    m_q_static_3 = q_static_3;
+    m_q_static_4 = q_static_4;
+    m_q_static_5 = q_static_5;
+    m_q_static_6 = q_static_6;
+    m_q_static_7 = q_static_7;
+    m_q_static_8 = q_static_8;
+    m_q_static_9 = q_static_9;
+    m_q_static_10 = q_static_10;
+    m_q_static_11 = q_static_11;
+    m_q_static_12 = q_static_12;
+    m_q_static_13 = q_static_13;
+    m_q_static_14 = q_static_14;
 }
 
-void WheelOdometryParametric::updateIncrementPoseCovariance(double dt_sec)
+void UAWheelOdom::updateRelativePoseCovariance(
+    double phi_left_previous,
+    double phi_left_current,
+    double phi_right_previous,
+    double phi_right_current)
 {
-    const double increment_alpha = 0.5 * dt_sec * m_angular_vel;
-    const double cos_increment_alpha = std::cos(increment_alpha);
-    const double sin_increment_alpha = std::sin(increment_alpha);
+    const double phi_L_previous = phi_left_previous;
+    const double phi_L_current = phi_left_current;
+    const double phi_R_previous = phi_right_previous;
+    const double phi_R_current = phi_right_current;
+    const double y_c = m_com_y_offset;
+    const double b = m_wheel_separation;
+    const double r_L = m_left_wheel_radius;
+    const double r_R = m_right_wheel_radius;
+    const double q_static_0 = m_q_static_0;
+    const double q_static_1 = m_q_static_1;
+    const double q_static_2 = m_q_static_2;
+    const double q_static_3 = m_q_static_3;
+    const double q_static_4 = m_q_static_4;
+    const double q_static_5 = m_q_static_5;
+    const double q_static_6 = m_q_static_6;
+    const double q_static_7 = m_q_static_7;
+    const double q_static_8 = m_q_static_8;
+    const double q_static_9 = m_q_static_9;
+    const double q_static_10 = m_q_static_10;
+    const double q_static_11 = m_q_static_11;
+    const double q_static_12 = m_q_static_12;
+    const double q_static_13 = m_q_static_13;
+    const double q_static_14 = m_q_static_14;
 
-    Matrix3x2d l_increment = Matrix3x2d::Zero();
-    l_increment(0, 0) = dt_sec * cos_increment_alpha;
-    l_increment(0, 1) = -0.5 * dt_sec * dt_sec * m_linear_vel * sin_increment_alpha;
-    l_increment(1, 0) = dt_sec * sin_increment_alpha;
-    l_increment(1, 1) = 0.5 * dt_sec * dt_sec * m_linear_vel * cos_increment_alpha;
-    l_increment(2, 1) = dt_sec;
+    using std::cos;
+    using std::pow;
+    using std::sin;
+#include "generated/wheel_odom_sigma_dynamic_precomputes.inl"
 
-    m_increment_pose_covariance = l_increment * m_twist_covariance * l_increment.transpose();
+    m_increment_pose_covariance <<
+        Sigma_xx, Sigma_xy, Sigma_xyaw,
+        Sigma_xy, Sigma_yy, Sigma_yyaw,
+        Sigma_xyaw, Sigma_yyaw, Sigma_yawyaw;
     m_increment_pose_covariance +=
         m_increment_pose_covariance_regularization * Matrix3d::Identity();
 }
 
-void WheelOdometryParametric::fillIncrementalPoseMessage(
+void UAWheelOdom::fillIncrementalPoseMessage(
     const rclcpp::Time& from_stamp,
     const rclcpp::Time& to_stamp,
     double dt_sec
@@ -220,15 +237,10 @@ void WheelOdometryParametric::fillIncrementalPoseMessage(
     tf2::Quaternion q {};
     q.setRPY(0.0, 0.0, delta_yaw);
 
-    // Relative wheel increment T_from_to. Both endpoint frames are the
-    // robot body frame at different times; the pose maps coordinates
-    // from to_frame into from_frame.
+    // Relative wheel increment T_from_to between two timestamped base poses.
     m_incremental_pose_msg.header.stamp = to_stamp;
-    m_incremental_pose_msg.header.frame_id = "base_footprint_noisy_temp";
     m_incremental_pose_msg.from_stamp = from_stamp;
     m_incremental_pose_msg.to_stamp = to_stamp;
-    m_incremental_pose_msg.from_frame_id = "base_footprint_noisy_temp";
-    m_incremental_pose_msg.to_frame_id = "base_footprint_noisy_temp";
     m_incremental_pose_msg.pose.pose.position.x = delta_s * std::cos(midpoint_yaw);
     m_incremental_pose_msg.pose.pose.position.y = delta_s * std::sin(midpoint_yaw);
     m_incremental_pose_msg.pose.pose.position.z = 0.0;
@@ -256,7 +268,7 @@ void WheelOdometryParametric::fillIncrementalPoseMessage(
     m_incremental_pose_msg.pose.covariance[28] = m_unused_pose_variance;
 }
 
-void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& msg)
+void UAWheelOdom::jointCallback(const sensor_msgs::msg::JointState& msg)
 {
     auto left_it = std::find(msg.name.begin(), msg.name.end(), "base_lw_joint");
     auto right_it = std::find(msg.name.begin(), msg.name.end(), "base_rw_joint");
@@ -285,8 +297,12 @@ void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& 
         return;
     }
 
-    const double dp_left = msg.position[left_index] - m_left_wheel_previous_position;
-    const double dp_right = msg.position[right_index] - m_right_wheel_previous_position;
+    const double phi_left_previous = m_left_wheel_previous_position;
+    const double phi_right_previous = m_right_wheel_previous_position;
+    const double phi_left_current = msg.position[left_index];
+    const double phi_right_current = msg.position[right_index];
+    const double dp_left = phi_left_current - phi_left_previous;
+    const double dp_right = phi_right_current - phi_right_previous;
 
     const rclcpp::Duration dt = msg_time - m_prev_time;
     const double dt_sec = dt.seconds();
@@ -297,16 +313,18 @@ void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& 
     }
 
     const rclcpp::Time previous_stamp = m_prev_time;
-    const double wheel_rate_left = dp_left / dt_sec;
-    const double wheel_rate_right = dp_right / dt_sec;
 
-    m_left_wheel_previous_position = msg.position[left_index];
-    m_right_wheel_previous_position = msg.position[right_index];
+    m_left_wheel_previous_position = phi_left_current;
+    m_right_wheel_previous_position = phi_right_current;
     m_prev_time = msg_time;
 
     computeWheelOdometry(dp_left, dp_right, dt_sec);
-    updateTwistCovariance(wheel_rate_left, wheel_rate_right, dt_sec);
-    updateIncrementPoseCovariance(dt_sec);
+    updateRelativePoseCovariance(
+        phi_left_previous,
+        phi_left_current,
+        phi_right_previous,
+        phi_right_current
+    );
 
     geometry_msgs::msg::PoseStamped stamped_pose {};
     stamped_pose.header.stamp = msg_time;
@@ -339,7 +357,7 @@ void WheelOdometryParametric::jointCallback(const sensor_msgs::msg::JointState& 
 int main(int argc, char* argv[])
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<WheelOdometryParametric>("wheel_odometry_parametric"));
+    rclcpp::spin(std::make_shared<UAWheelOdom>("wheel_odometry_parametric"));
     rclcpp::shutdown();
 
     return 0;

@@ -19,7 +19,7 @@ find_package(bot_interfaces REQUIRED)
 
 include_directories(include)
 
-add_executable(wheel_odometry_parametric src/wheel_odometry_parametric.cpp)
+add_executable(wheel_odometry_parametric src/ua_wheel_odom.cpp)
 ament_target_dependencies(
   wheel_odometry_parametric 
   rclcpp 

@@ -1,5 +1,5 @@
-#ifndef WHEEL_ODOMETRY_PARAMETRIC_HPP
-#define WHEEL_ODOMETRY_PARAMETRIC_HPP
+#ifndef UA_WHEEL_ODOM_HPP
+#define UA_WHEEL_ODOM_HPP
 
 #include <string>
 
@@ -9,22 +9,23 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/joint_state.hpp>
 
-class WheelOdometryParametric : public rclcpp::Node
+class UAWheelOdom : public rclcpp::Node
 {
 public:
-    explicit WheelOdometryParametric(const std::string& name);
+    explicit UAWheelOdom(const std::string& name);
 
 private:
-    using Matrix2d = Eigen::Matrix2d;
     using Matrix3d = Eigen::Matrix3d;
-    using Matrix2x6d = Eigen::Matrix<double, 2, 6>;
-    using Matrix3x2d = Eigen::Matrix<double, 3, 2>;
-    using Matrix6d = Eigen::Matrix<double, 6, 6>;
 
     void jointCallback(const sensor_msgs::msg::JointState& msg);
     void computeWheelOdometry(double dp_left, double dp_right, double dt_sec);
-    void updateTwistCovariance(double wheel_rate_left, double wheel_rate_right, double dt_sec);
-    void updateIncrementPoseCovariance(double dt_sec);
+    void computeSigmaStaticPrecomputes();
+    void updateRelativePoseCovariance(
+        double phi_left_previous,
+        double phi_left_current,
+        double phi_right_previous,
+        double phi_right_current
+    );
     void fillIncrementalPoseMessage(
         const rclcpp::Time& from_stamp,
         const rclcpp::Time& to_stamp,
@@ -64,7 +65,22 @@ private:
     double m_linear_vel {};
     double m_angular_vel {};
 
-    Matrix2d m_twist_covariance {Matrix2d::Zero()};
+    double m_q_static_0 {};
+    double m_q_static_1 {};
+    double m_q_static_2 {};
+    double m_q_static_3 {};
+    double m_q_static_4 {};
+    double m_q_static_5 {};
+    double m_q_static_6 {};
+    double m_q_static_7 {};
+    double m_q_static_8 {};
+    double m_q_static_9 {};
+    double m_q_static_10 {};
+    double m_q_static_11 {};
+    double m_q_static_12 {};
+    double m_q_static_13 {};
+    double m_q_static_14 {};
+
     Matrix3d m_increment_pose_covariance {Matrix3d::Zero()};
 };
 

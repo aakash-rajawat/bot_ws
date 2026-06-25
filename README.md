@@ -151,9 +151,17 @@ Known caveats in the current tree:
 
 - `bot_bringup/vision_container.launch.py` is the canonical integrated launch path.
 - `bot_localization/launch/global_localization.launch.py` currently has a misspelled launch entry function and should be treated as unfinished.
-- Package metadata still contains TODO description/license fields in several packages.
+- Package metadata still contains TODO description fields in several packages.
 - Some DUGMA and MLE client/server diagnostics are intentionally verbose while the pipeline is being tuned.
 - `bot_vision_py/launch/xfeat_lightglue_server.launch.py` assumes the workspace path `/workspaces/bot_ws`.
+
+## License
+
+Original source code in this repository is licensed under the Apache License, Version 2.0. See `LICENSE`.
+
+Third-party software, generated-code templates, model weights, and research publications retain their own licenses and attribution requirements. See `THIRD_PARTY_NOTICES.md` and `CITATION.cff`.
+
+DUGMA and ROPTLIB are treated as research/external dependency references with unresolved upstream source-code licensing in this workspace audit. Do not copy or redistribute upstream DUGMA or ROPTLIB source code without explicit permission or license clarification.
 
 ## References
 

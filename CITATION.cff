@@ -1,0 +1,76 @@
+cff-version: 1.2.0
+message: "If you use this workspace, please cite this repository and the referenced methods."
+title: "Uncertainty-Aware SLAM Workspace"
+type: software
+authors:
+  - {family-names: "Rajawat", given-names: "Aakash"}
+repository-code: "https://github.com/aakash-rajawat/bot_ws"
+keywords:
+  - "ROS 2"
+  - "SLAM"
+  - "uncertainty propagation"
+  - "triangulation"
+  - "mobile robotics"
+
+references:
+  - type: article
+    title: "LOSTU: Fast, Scalable, and Uncertainty-Aware Triangulation"
+    authors:
+      - {family-names: "Henry", given-names: "Sebastien"}
+      - {family-names: "Christian", given-names: "John A."}
+    doi: "10.48550/arXiv.2311.11171"
+    year: 2024
+
+  - type: conference-paper
+    title: "DUGMA: Dynamic Uncertainty-Based Gaussian Mixture Alignment"
+    authors:
+      - {family-names: "Pu", given-names: "Can"}
+      - {family-names: "Li", given-names: "Nanbo"}
+      - {family-names: "Tylecek", given-names: "Radim"}
+      - {family-names: "Fisher", given-names: "Robert B."}
+    doi: "10.48550/arXiv.1803.07426"
+    year: 2018
+
+  - type: software
+    title: "borglab/gtsam"
+    authors:
+      - {family-names: "Dellaert", given-names: "Frank"}
+      - {name: "GTSAM Contributors"}
+    doi: "10.5281/zenodo.5794541"
+    version: "4.2a8"
+    url: "https://github.com/borglab/gtsam"
+    year: 2022
+
+  - type: conference-paper
+    title: "XFeat: Accelerated Features for Lightweight Image Matching"
+    authors:
+      - {family-names: "Potje", given-names: "Guilherme"}
+      - {family-names: "Cadar", given-names: "Felipe"}
+      - {family-names: "Araujo", given-names: "Andre"}
+      - {family-names: "Martins", given-names: "Renato"}
+      - {family-names: "Nascimento", given-names: "Erickson R."}
+    doi: "10.1109/CVPR52733.2024.00259"
+    year: 2024
+
+  - type: article
+    title: "LightGlue: Local Feature Matching at Light Speed"
+    authors:
+      - {family-names: "Lindenberger", given-names: "Philipp"}
+      - {family-names: "Sarlin", given-names: "Paul-Edouard"}
+      - {family-names: "Pollefeys", given-names: "Marc"}
+    doi: "10.48550/arXiv.2306.13643"
+    year: 2023
+
+  - type: article
+    title: "The Impact of Parametric Uncertainties on Mobile Robots Velocities and Pose Estimation"
+    authors:
+      - {family-names: "Carvalho Filho", given-names: "Jose Gilmar Nunes De"}
+      - {family-names: "Carvalho", given-names: "Elyson Adan Nunes"}
+      - {family-names: "Molina", given-names: "Lucas"}
+      - {family-names: "Freire", given-names: "Eduardo Oliveira"}
+    doi: "10.1109/ACCESS.2019.2919335"
+    journal: "IEEE Access"
+    volume: 7
+    start: 69070
+    end: 69086
+    year: 2019

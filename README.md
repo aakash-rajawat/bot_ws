@@ -154,3 +154,14 @@ Known caveats in the current tree:
 - Package metadata still contains TODO description/license fields in several packages.
 - Some DUGMA and MLE client/server diagnostics are intentionally verbose while the pipeline is being tuned.
 - `bot_vision_py/launch/xfeat_lightglue_server.launch.py` assumes the workspace path `/workspaces/bot_ws`.
+
+## References
+
+This workspace implements or builds on methods and software from:
+
+- Henry, S., & Christian, J. A. (2024). LOSTU: Fast, Scalable, and Uncertainty-Aware Triangulation. https://doi.org/10.48550/arXiv.2311.11171
+- Pu, C., Li, N., Tylecek, R., & Fisher, R. B. (2018). DUGMA: Dynamic Uncertainty-Based Gaussian Mixture Alignment. https://doi.org/10.48550/arXiv.1803.07426
+- Dellaert, F., & GTSAM Contributors. (2022). borglab/gtsam (Version 4.2a8) [Computer software]. https://doi.org/10.5281/zenodo.5794541
+- Potje, G., Cadar, F., Araujo, A., Martins, R., & Nascimento, E. R. (2024). XFeat: Accelerated Features for Lightweight Image Matching. https://doi.org/10.1109/CVPR52733.2024.00259
+- Lindenberger, P., Sarlin, P.-E., & Pollefeys, M. (2023). LightGlue: Local Feature Matching at Light Speed. https://doi.org/10.48550/arXiv.2306.13643
+- Carvalho Filho, J. G. N. D., Carvalho, E. A. N., Molina, L., & Freire, E. O. (2019). The Impact of Parametric Uncertainties on Mobile Robots Velocities and Pose Estimation. IEEE Access, 7, 69070-69086. https://doi.org/10.1109/ACCESS.2019.2919335

@@ -18,6 +18,9 @@ find_package(std_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(twist_mux_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
+find_package(bot_interfaces REQUIRED)
+find_package(eigen3_cmake_module REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 include_directories(include)
 
@@ -40,6 +43,16 @@ ament_target_dependencies(
   visualization_msgs
 )
 
+add_executable(point_cloud_uncertainty_viz src/point_cloud_uncertainty_viz.cpp)
+ament_target_dependencies(
+  point_cloud_uncertainty_viz
+  rclcpp
+  std_msgs
+  visualization_msgs
+  bot_interfaces
+)
+target_link_libraries(point_cloud_uncertainty_viz Eigen3::Eigen)
+
 install(
   DIRECTORY include/
   DESTINATION include
@@ -48,6 +61,7 @@ install(
 install(TARGETS
   bot_trajectory
   safety_stop
+  point_cloud_uncertainty_viz
   DESTINATION lib/${PROJECT_NAME}
 )
 

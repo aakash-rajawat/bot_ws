@@ -4,10 +4,12 @@ from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
@@ -51,6 +53,30 @@ def generate_launch_description():
             "ua_wheel_odom.yaml",
         ),
         description="Absolute path to uncertainty-aware wheel odometry config file",
+    )
+
+    enable_uncertainty_viz_arg = DeclareLaunchArgument(
+        "enable_uncertainty_viz",
+        default_value="false",
+        description="Publish camera and LiDAR point-covariance ellipsoids for RViz",
+    )
+
+    uncertainty_viz_magnification_arg = DeclareLaunchArgument(
+        "uncertainty_viz_magnification",
+        default_value="20.0",
+        description="Uniform visual magnification applied to all ellipsoid axes",
+    )
+
+    uncertainty_viz_camera_max_markers_arg = DeclareLaunchArgument(
+        "uncertainty_viz_camera_max_markers",
+        default_value="0",
+        description="Maximum camera ellipsoids per cloud; zero publishes every valid point",
+    )
+
+    uncertainty_viz_lidar_max_markers_arg = DeclareLaunchArgument(
+        "uncertainty_viz_lidar_max_markers",
+        default_value="0",
+        description="Maximum LiDAR ellipsoids per cloud; zero publishes every valid point",
     )
 
     gazebo = IncludeLaunchDescription(
@@ -143,6 +169,29 @@ def generate_launch_description():
         output="screen",
         parameters=[{
             "use_sim_time": True,
+        }],
+    )
+
+    point_cloud_uncertainty_viz = Node(
+        package="bot_utils",
+        executable="point_cloud_uncertainty_viz",
+        name="point_cloud_uncertainty_viz",
+        output="screen",
+        condition=IfCondition(LaunchConfiguration("enable_uncertainty_viz")),
+        parameters=[{
+            "use_sim_time": True,
+            "magnification": ParameterValue(
+                LaunchConfiguration("uncertainty_viz_magnification"),
+                value_type=float,
+            ),
+            "camera_max_markers": ParameterValue(
+                LaunchConfiguration("uncertainty_viz_camera_max_markers"),
+                value_type=int,
+            ),
+            "lidar_max_markers": ParameterValue(
+                LaunchConfiguration("uncertainty_viz_lidar_max_markers"),
+                value_type=int,
+            ),
         }],
     )
 
@@ -260,6 +309,10 @@ def generate_launch_description():
         world_config_arg,
         controller_config_arg,
         ua_wheel_odom_config_arg,
+        enable_uncertainty_viz_arg,
+        uncertainty_viz_magnification_arg,
+        uncertainty_viz_camera_max_markers_arg,
+        uncertainty_viz_lidar_max_markers_arg,
         gazebo,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,
@@ -268,6 +321,7 @@ def generate_launch_description():
         xfeat_lightglue_server,
         vision_frontend,
         ua_lidar_point_cloud,
+        point_cloud_uncertainty_viz,
         ua_wheel_odom,
         mle_relative_pose_server_lidar,
         mle_relative_pose_server_triangulation,

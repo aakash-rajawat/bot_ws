@@ -25,7 +25,7 @@ def generate_launch_description():
             os.path.join(
                 bot_description_dir,
                 "rviz",
-                "display.rviz",
+                "ua_viz.rviz",
             ),
         ],
         parameters=[{

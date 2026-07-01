@@ -6,15 +6,13 @@ This repository is a ROS 2 Jazzy workspace for a simulated differential-drive ro
 
 <p align="center">
   <video
-    src="demo_files/rviz_trimmed_cropped.mp4"
+    src="https://github.com/aakash-rajawat/bot_ws/raw/main/demo_files/rviz_trimmed_cropped.mp4"
     controls
     muted
     loop
     width="100%">
   </video>
 </p>
-
-[Watch the RViz uncertainty visualization demo](demo_files/rviz_trimmed_cropped.mp4)
 
 The main integrated launch path is:
 

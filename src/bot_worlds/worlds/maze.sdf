@@ -60,7 +60,7 @@
         <visual name="floor_10x10">
           <geometry>
             <mesh>
-              <uri>../assets/meshes/floor_20x20.obj</uri>
+              <uri>model://bot_worlds/assets/meshes/floor_20x20.obj</uri>
             </mesh>
           </geometry>
         </visual>
@@ -89,7 +89,7 @@
             <specular>0.02 0.02 0.02 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/ceiling_tex.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/ceiling_tex.png</albedo_map>
                 <roughness>0.98</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -241,7 +241,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_01.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_01.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -273,7 +273,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_02.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_02.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -305,7 +305,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_03.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_03.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -337,7 +337,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_04.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_04.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -369,7 +369,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_05.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_05.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -401,7 +401,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_06.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_06.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -433,7 +433,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_07.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_07.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -465,7 +465,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_08.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_08.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -497,7 +497,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_09.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_09.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -529,7 +529,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_10.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_10.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -561,7 +561,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_11.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_11.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -593,7 +593,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_12.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_12.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -625,7 +625,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_13.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_13.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -657,7 +657,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_14.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_14.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -689,7 +689,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_15.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_15.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -721,7 +721,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_16.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_16.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -753,7 +753,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_17.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_17.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -785,7 +785,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_18.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_18.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -817,7 +817,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_19.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_19.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -849,7 +849,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_20.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_20.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>
@@ -881,7 +881,7 @@
             <specular>0.05 0.05 0.05 1.0</specular>
             <pbr>
               <metal>
-                <albedo_map>../assets/textures/wall_tex_21.png</albedo_map>
+                <albedo_map>model://bot_worlds/assets/textures/wall_tex_21.png</albedo_map>
                 <roughness>0.95</roughness>
                 <metalness>0.0</metalness>
               </metal>

@@ -57,3 +57,6 @@ third_party/gtsam/
 
 # FreeCAD backup files
 *.FCBak
+
+# SVG files
+*.svg

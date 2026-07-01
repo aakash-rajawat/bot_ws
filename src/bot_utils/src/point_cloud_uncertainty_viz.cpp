@@ -94,6 +94,9 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     m_gtsam_ellipse_thickness =
         declare_parameter<double>("gtsam_ellipse_thickness", 0.02);
     m_gtsam_z_offset = declare_parameter<double>("gtsam_z_offset", 0.03);
+    m_gtsam_origin_x = declare_parameter<double>("gtsam_origin_x", 1.0);
+    m_gtsam_origin_y = declare_parameter<double>("gtsam_origin_y", 1.0);
+    m_gtsam_origin_yaw = declare_parameter<double>("gtsam_origin_yaw", 0.0);
 
     const auto camera_max_markers = declare_parameter<std::int64_t>("camera_max_markers", 0);
     const auto lidar_max_markers = declare_parameter<std::int64_t>("lidar_max_markers", 0);
@@ -126,6 +129,14 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     if(!std::isfinite(m_gtsam_z_offset))
     {
         throw std::invalid_argument("gtsam_z_offset must be finite");
+    }
+    if(
+        !std::isfinite(m_gtsam_origin_x) ||
+        !std::isfinite(m_gtsam_origin_y) ||
+        !std::isfinite(m_gtsam_origin_yaw)
+    )
+    {
+        throw std::invalid_argument("GTSAM visualization origin must be finite");
     }
     if(camera_max_markers < 0 || lidar_max_markers < 0 || gtsam_max_history < 0)
     {
@@ -211,26 +222,56 @@ void PointCloudUncertaintyViz::gtsamPoseCallback(
     const auto& covariance_msg = msg->pose.covariance;
     const double covariance_xy = 0.5 * (covariance_msg[1] + covariance_msg[6]);
 
-    Eigen::Matrix2d covariance;
-    covariance <<
+    Eigen::Matrix2d covariance_tangent;
+    covariance_tangent <<
         covariance_msg[0], covariance_xy,
         covariance_xy, covariance_msg[7];
 
-    const Eigen::Vector2d position(
+    const Eigen::Vector2d position_world(
         msg->pose.pose.position.x,
         msg->pose.pose.position.y
     );
+    const auto& orientation_msg = msg->pose.pose.orientation;
+    Eigen::Quaterniond pose_quaternion(
+        orientation_msg.w,
+        orientation_msg.x,
+        orientation_msg.y,
+        orientation_msg.z
+    );
 
-    if(!position.allFinite() || !covariance.allFinite())
+    if(
+        !position_world.allFinite() ||
+        !covariance_tangent.allFinite() ||
+        !pose_quaternion.coeffs().allFinite() ||
+        pose_quaternion.norm() <= 1.0e-12
+    )
     {
         RCLCPP_WARN_THROTTLE(
             get_logger(),
             *get_clock(),
             5000,
-            "Skipping GTSAM pose ellipse because its position or XY covariance is non-finite."
+            "Skipping GTSAM pose ellipse because its pose or XY covariance is invalid."
         );
         return;
     }
+
+    pose_quaternion.normalize();
+    const Eigen::Matrix3d pose_rotation_3d = pose_quaternion.toRotationMatrix();
+    const double pose_yaw = std::atan2(
+        pose_rotation_3d(1, 0),
+        pose_rotation_3d(0, 0)
+    );
+
+    const Eigen::Rotation2Dd world_to_odom(-m_gtsam_origin_yaw);
+    const Eigen::Rotation2Dd tangent_to_world(pose_yaw);
+    const Eigen::Vector2d world_origin(m_gtsam_origin_x, m_gtsam_origin_y);
+
+    const Eigen::Vector2d position =
+        world_to_odom * (position_world - world_origin);
+    const Eigen::Matrix2d tangent_to_odom =
+        world_to_odom.toRotationMatrix() * tangent_to_world.toRotationMatrix();
+    const Eigen::Matrix2d covariance =
+        tangent_to_odom * covariance_tangent * tangent_to_odom.transpose();
 
     const Eigen::SelfAdjointEigenSolver<Eigen::Matrix2d> eigensolver(covariance);
     if(eigensolver.info() != Eigen::Success || (eigensolver.eigenvalues().array() <= 0.0).any())

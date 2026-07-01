@@ -55,6 +55,24 @@ def generate_launch_description():
         description="Absolute path to uncertainty-aware wheel odometry config file",
     )
 
+    gtsam_initial_pose_x_arg = DeclareLaunchArgument(
+        "gtsam_initial_pose_x",
+        default_value="1.0",
+        description="GTSAM initial world-frame X coordinate",
+    )
+
+    gtsam_initial_pose_y_arg = DeclareLaunchArgument(
+        "gtsam_initial_pose_y",
+        default_value="1.0",
+        description="GTSAM initial world-frame Y coordinate",
+    )
+
+    gtsam_initial_pose_yaw_arg = DeclareLaunchArgument(
+        "gtsam_initial_pose_yaw",
+        default_value="0.0",
+        description="GTSAM initial world-frame yaw in radians",
+    )
+
     enable_uncertainty_viz_arg = DeclareLaunchArgument(
         "enable_uncertainty_viz",
         default_value="false",
@@ -212,6 +230,18 @@ def generate_launch_description():
                 LaunchConfiguration("uncertainty_viz_gtsam_max_history"),
                 value_type=int,
             ),
+            "gtsam_origin_x": ParameterValue(
+                LaunchConfiguration("gtsam_initial_pose_x"),
+                value_type=float,
+            ),
+            "gtsam_origin_y": ParameterValue(
+                LaunchConfiguration("gtsam_initial_pose_y"),
+                value_type=float,
+            ),
+            "gtsam_origin_yaw": ParameterValue(
+                LaunchConfiguration("gtsam_initial_pose_yaw"),
+                value_type=float,
+            ),
         }],
     )
 
@@ -307,9 +337,18 @@ def generate_launch_description():
         output="screen",
         parameters=[{
             "use_sim_time": True,
-            "initial_pose_x": 1.0,
-            "initial_pose_y": 1.0,
-            "initial_pose_yaw": 0.0,
+            "initial_pose_x": ParameterValue(
+                LaunchConfiguration("gtsam_initial_pose_x"),
+                value_type=float,
+            ),
+            "initial_pose_y": ParameterValue(
+                LaunchConfiguration("gtsam_initial_pose_y"),
+                value_type=float,
+            ),
+            "initial_pose_yaw": ParameterValue(
+                LaunchConfiguration("gtsam_initial_pose_yaw"),
+                value_type=float,
+            ),
         }],
     )
 
@@ -329,6 +368,9 @@ def generate_launch_description():
         world_config_arg,
         controller_config_arg,
         ua_wheel_odom_config_arg,
+        gtsam_initial_pose_x_arg,
+        gtsam_initial_pose_y_arg,
+        gtsam_initial_pose_yaw_arg,
         enable_uncertainty_viz_arg,
         uncertainty_viz_magnification_arg,
         uncertainty_viz_camera_max_markers_arg,

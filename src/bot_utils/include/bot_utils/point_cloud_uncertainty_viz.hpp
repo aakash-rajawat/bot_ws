@@ -52,6 +52,9 @@ private:
     double m_gtsam_magnification {1.0};
     double m_gtsam_ellipse_thickness {0.02};
     double m_gtsam_z_offset {0.03};
+    double m_gtsam_origin_x {1.0};
+    double m_gtsam_origin_y {1.0};
+    double m_gtsam_origin_yaw {0.0};
     std::size_t m_gtsam_max_history {30};
     std_msgs::msg::ColorRGBA m_gtsam_color;
     std::deque<TimestampedMarker> m_gtsam_history;

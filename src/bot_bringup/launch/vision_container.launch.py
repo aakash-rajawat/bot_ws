@@ -85,6 +85,12 @@ def generate_launch_description():
         description="Uniform visual magnification applied to GTSAM XY ellipse axes",
     )
 
+    uncertainty_viz_gtsam_max_history_arg = DeclareLaunchArgument(
+        "uncertainty_viz_gtsam_max_history",
+        default_value="30",
+        description="Number of recent GTSAM pose ellipses retained; zero retains all",
+    )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(bot_description_dir, "launch", "headless_gazebo.launch.py")
@@ -201,6 +207,10 @@ def generate_launch_description():
             "gtsam_magnification": ParameterValue(
                 LaunchConfiguration("uncertainty_viz_gtsam_magnification"),
                 value_type=float,
+            ),
+            "gtsam_max_history": ParameterValue(
+                LaunchConfiguration("uncertainty_viz_gtsam_max_history"),
+                value_type=int,
             ),
         }],
     )
@@ -324,6 +334,7 @@ def generate_launch_description():
         uncertainty_viz_camera_max_markers_arg,
         uncertainty_viz_lidar_max_markers_arg,
         uncertainty_viz_gtsam_magnification_arg,
+        uncertainty_viz_gtsam_max_history_arg,
         gazebo,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,

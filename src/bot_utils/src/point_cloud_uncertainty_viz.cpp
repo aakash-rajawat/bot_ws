@@ -97,6 +97,7 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
 
     const auto camera_max_markers = declare_parameter<std::int64_t>("camera_max_markers", 0);
     const auto lidar_max_markers = declare_parameter<std::int64_t>("lidar_max_markers", 0);
+    const auto gtsam_max_history = declare_parameter<std::int64_t>("gtsam_max_history", 30);
 
     if(!std::isfinite(m_confidence_scale) || m_confidence_scale <= 0.0)
     {
@@ -126,10 +127,14 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     {
         throw std::invalid_argument("gtsam_z_offset must be finite");
     }
-    if(camera_max_markers < 0 || lidar_max_markers < 0)
+    if(camera_max_markers < 0 || lidar_max_markers < 0 || gtsam_max_history < 0)
     {
-        throw std::invalid_argument("marker limits must be non-negative; zero means unlimited");
+        throw std::invalid_argument(
+            "marker and history limits must be non-negative; zero means unlimited"
+        );
     }
+
+    m_gtsam_max_history = static_cast<std::size_t>(gtsam_max_history);
 
     m_camera_visualization.marker_namespace = "camera_point_uncertainty";
     m_camera_visualization.color = makeColor(
@@ -248,18 +253,13 @@ void PointCloudUncertaintyViz::gtsamPoseCallback(
         Eigen::AngleAxisd(ellipse_yaw, Eigen::Vector3d::UnitZ())
     );
 
-    visualization_msgs::msg::MarkerArray output;
-    output.markers.reserve(2);
-
-    visualization_msgs::msg::Marker delete_previous;
-    delete_previous.header = msg->header;
-    delete_previous.action = visualization_msgs::msg::Marker::DELETEALL;
-    output.markers.push_back(std::move(delete_previous));
-
     visualization_msgs::msg::Marker marker;
     marker.header = msg->header;
+    // Retained poses are expressed in the odometry frame. Using the latest TF
+    // prevents old marker timestamps from falling outside RViz's TF cache.
+    marker.header.stamp.sec = 0;
+    marker.header.stamp.nanosec = 0;
     marker.ns = "gtsam_pose_uncertainty";
-    marker.id = 0;
     marker.type = visualization_msgs::msg::Marker::SPHERE;
     marker.action = visualization_msgs::msg::Marker::ADD;
     marker.pose.position.x = position.x();
@@ -273,7 +273,47 @@ void PointCloudUncertaintyViz::gtsamPoseCallback(
     marker.scale.y = diameters.y();
     marker.scale.z = m_gtsam_ellipse_thickness;
     marker.color = m_gtsam_color;
-    output.markers.push_back(std::move(marker));
+
+    const std::int64_t stamp_nanoseconds =
+        static_cast<std::int64_t>(msg->header.stamp.sec) * 1000000000LL +
+        static_cast<std::int64_t>(msg->header.stamp.nanosec);
+    const auto existing_marker = std::find_if(
+        m_gtsam_history.begin(),
+        m_gtsam_history.end(),
+        [stamp_nanoseconds](const TimestampedMarker& retained)
+        {
+            return retained.stamp_nanoseconds == stamp_nanoseconds;
+        }
+    );
+
+    if(existing_marker != m_gtsam_history.end())
+    {
+        existing_marker->marker = std::move(marker);
+    }
+    else
+    {
+        m_gtsam_history.push_back(TimestampedMarker {stamp_nanoseconds, std::move(marker)});
+    }
+
+    while(m_gtsam_max_history > 0 && m_gtsam_history.size() > m_gtsam_max_history)
+    {
+        m_gtsam_history.pop_front();
+    }
+
+    visualization_msgs::msg::MarkerArray output;
+    output.markers.reserve(m_gtsam_history.size() + 1);
+
+    visualization_msgs::msg::Marker delete_previous;
+    delete_previous.header = msg->header;
+    delete_previous.action = visualization_msgs::msg::Marker::DELETEALL;
+    output.markers.push_back(std::move(delete_previous));
+
+    std::int32_t marker_id {0};
+    for(auto& retained : m_gtsam_history)
+    {
+        retained.marker.id = marker_id++;
+        output.markers.push_back(retained.marker);
+    }
 
     m_gtsam_publisher->publish(output);
 }

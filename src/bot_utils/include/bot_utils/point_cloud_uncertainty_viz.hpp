@@ -3,12 +3,14 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <deque>
 #include <string>
 
 #include <bot_interfaces/msg/point_with_covariance_array.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/color_rgba.hpp>
+#include <visualization_msgs/msg/marker.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
 
 namespace bot_utils
@@ -30,6 +32,12 @@ private:
         rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr publisher;
     };
 
+    struct TimestampedMarker
+    {
+        std::int64_t stamp_nanoseconds {0};
+        visualization_msgs::msg::Marker marker;
+    };
+
     void cameraCloudCallback(const PointCloud::ConstSharedPtr msg);
     void lidarCloudCallback(const PointCloud::ConstSharedPtr msg);
     void gtsamPoseCallback(const nav_msgs::msg::Odometry::ConstSharedPtr msg);
@@ -44,7 +52,9 @@ private:
     double m_gtsam_magnification {1.0};
     double m_gtsam_ellipse_thickness {0.02};
     double m_gtsam_z_offset {0.03};
+    std::size_t m_gtsam_max_history {30};
     std_msgs::msg::ColorRGBA m_gtsam_color;
+    std::deque<TimestampedMarker> m_gtsam_history;
 
     CloudVisualization m_camera_visualization;
     CloudVisualization m_lidar_visualization;

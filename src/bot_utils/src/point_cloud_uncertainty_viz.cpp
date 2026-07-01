@@ -152,7 +152,7 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
         declare_parameter<double>("camera_color.r", 0.00),
         declare_parameter<double>("camera_color.g", 0.75),
         declare_parameter<double>("camera_color.b", 1.00),
-        declare_parameter<double>("camera_color.a", 0.50)
+        declare_parameter<double>("camera_color.a", 0.70)
     );
     m_camera_visualization.max_markers = static_cast<std::size_t>(camera_max_markers);
     m_camera_visualization.publisher =
@@ -161,7 +161,7 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     m_lidar_visualization.marker_namespace = "lidar_point_uncertainty";
     m_lidar_visualization.color = makeColor(
         declare_parameter<double>("lidar_color.r", 1.00),
-        declare_parameter<double>("lidar_color.g", 0.00),
+        declare_parameter<double>("lidar_color.g", 0.50),
         declare_parameter<double>("lidar_color.b", 0.00),
         declare_parameter<double>("lidar_color.a", 0.50)
     );

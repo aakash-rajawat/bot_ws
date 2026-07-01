@@ -4,6 +4,18 @@
 
 This repository is a ROS 2 Jazzy workspace for a simulated differential-drive robot with an uncertainty-aware SLAM pipeline. The system runs in Gazebo, builds uncertain wheel, LiDAR, and visual measurements, estimates relative motion with CUDA-accelerated DUGMA registration, and fuses timestamped relative-pose factors in a GTSAM pose graph.
 
+<p align="center">
+  <video
+    src="demo_files/rviz_trimmed_cropped.mp4"
+    controls
+    muted
+    loop
+    width="100%">
+  </video>
+</p>
+
+[Watch the RViz uncertainty visualization demo](demo_files/rviz_trimmed_cropped.mp4)
+
 The main integrated launch path is:
 
 ```bash

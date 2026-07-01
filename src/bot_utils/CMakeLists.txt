@@ -47,6 +47,7 @@ add_executable(point_cloud_uncertainty_viz src/point_cloud_uncertainty_viz.cpp)
 ament_target_dependencies(
   point_cloud_uncertainty_viz
   rclcpp
+  nav_msgs
   std_msgs
   visualization_msgs
   bot_interfaces

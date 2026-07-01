@@ -77,9 +77,23 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
         "lidar_output_topic",
         "/uncertainty_visualization/lidar_ellipsoids"
     );
+    const std::string gtsam_input_topic = declare_parameter<std::string>(
+        "gtsam_input_topic",
+        "/bot_controller/odom_gtsam_fused"
+    );
+    const std::string gtsam_output_topic = declare_parameter<std::string>(
+        "gtsam_output_topic",
+        "/uncertainty_visualization/gtsam_pose"
+    );
 
     m_confidence_scale = declare_parameter<double>("confidence_scale", 2.795483482);
     m_magnification = declare_parameter<double>("magnification", 1.0);
+    m_gtsam_confidence_scale =
+        declare_parameter<double>("gtsam_confidence_scale", 2.447746831);
+    m_gtsam_magnification = declare_parameter<double>("gtsam_magnification", 1.0);
+    m_gtsam_ellipse_thickness =
+        declare_parameter<double>("gtsam_ellipse_thickness", 0.02);
+    m_gtsam_z_offset = declare_parameter<double>("gtsam_z_offset", 0.03);
 
     const auto camera_max_markers = declare_parameter<std::int64_t>("camera_max_markers", 0);
     const auto lidar_max_markers = declare_parameter<std::int64_t>("lidar_max_markers", 0);
@@ -91,6 +105,26 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     if(!std::isfinite(m_magnification) || m_magnification <= 0.0)
     {
         throw std::invalid_argument("magnification must be finite and greater than zero");
+    }
+    if(!std::isfinite(m_gtsam_confidence_scale) || m_gtsam_confidence_scale <= 0.0)
+    {
+        throw std::invalid_argument(
+            "gtsam_confidence_scale must be finite and greater than zero"
+        );
+    }
+    if(!std::isfinite(m_gtsam_magnification) || m_gtsam_magnification <= 0.0)
+    {
+        throw std::invalid_argument("gtsam_magnification must be finite and greater than zero");
+    }
+    if(!std::isfinite(m_gtsam_ellipse_thickness) || m_gtsam_ellipse_thickness <= 0.0)
+    {
+        throw std::invalid_argument(
+            "gtsam_ellipse_thickness must be finite and greater than zero"
+        );
+    }
+    if(!std::isfinite(m_gtsam_z_offset))
+    {
+        throw std::invalid_argument("gtsam_z_offset must be finite");
     }
     if(camera_max_markers < 0 || lidar_max_markers < 0)
     {
@@ -119,6 +153,15 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     m_lidar_visualization.publisher =
         create_publisher<visualization_msgs::msg::MarkerArray>(lidar_output_topic, 10);
 
+    m_gtsam_color = makeColor(
+        declare_parameter<double>("gtsam_color.r", 0.25),
+        declare_parameter<double>("gtsam_color.g", 1.00),
+        declare_parameter<double>("gtsam_color.b", 0.30),
+        declare_parameter<double>("gtsam_color.a", 0.45)
+    );
+    m_gtsam_publisher =
+        create_publisher<visualization_msgs::msg::MarkerArray>(gtsam_output_topic, 10);
+
     m_camera_subscription = create_subscription<PointCloud>(
         camera_input_topic,
         10,
@@ -129,12 +172,21 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
         10,
         std::bind(&PointCloudUncertaintyViz::lidarCloudCallback, this, std::placeholders::_1)
     );
+    m_gtsam_subscription = create_subscription<nav_msgs::msg::Odometry>(
+        gtsam_input_topic,
+        10,
+        std::bind(&PointCloudUncertaintyViz::gtsamPoseCallback, this, std::placeholders::_1)
+    );
 
     RCLCPP_INFO(
         get_logger(),
-        "Point covariance visualization ready: confidence_scale=%.6f magnification=%.3f",
+        "Uncertainty visualization ready: point_confidence_scale=%.6f "
+        "point_magnification=%.3f gtsam_confidence_scale=%.6f "
+        "gtsam_magnification=%.3f",
         m_confidence_scale,
-        m_magnification
+        m_magnification,
+        m_gtsam_confidence_scale,
+        m_gtsam_magnification
     );
 }
 
@@ -146,6 +198,84 @@ void PointCloudUncertaintyViz::cameraCloudCallback(const PointCloud::ConstShared
 void PointCloudUncertaintyViz::lidarCloudCallback(const PointCloud::ConstSharedPtr msg)
 {
     publishEllipsoids(*msg, m_lidar_visualization);
+}
+
+void PointCloudUncertaintyViz::gtsamPoseCallback(
+    const nav_msgs::msg::Odometry::ConstSharedPtr msg)
+{
+    const auto& covariance_msg = msg->pose.covariance;
+    const double covariance_xy = 0.5 * (covariance_msg[1] + covariance_msg[6]);
+
+    Eigen::Matrix2d covariance;
+    covariance <<
+        covariance_msg[0], covariance_xy,
+        covariance_xy, covariance_msg[7];
+
+    const Eigen::Vector2d position(
+        msg->pose.pose.position.x,
+        msg->pose.pose.position.y
+    );
+
+    if(!position.allFinite() || !covariance.allFinite())
+    {
+        RCLCPP_WARN_THROTTLE(
+            get_logger(),
+            *get_clock(),
+            5000,
+            "Skipping GTSAM pose ellipse because its position or XY covariance is non-finite."
+        );
+        return;
+    }
+
+    const Eigen::SelfAdjointEigenSolver<Eigen::Matrix2d> eigensolver(covariance);
+    if(eigensolver.info() != Eigen::Success || (eigensolver.eigenvalues().array() <= 0.0).any())
+    {
+        RCLCPP_WARN_THROTTLE(
+            get_logger(),
+            *get_clock(),
+            5000,
+            "Skipping GTSAM pose ellipse because its XY covariance is not positive definite."
+        );
+        return;
+    }
+
+    const Eigen::Vector2d diameters =
+        2.0 * m_gtsam_confidence_scale * m_gtsam_magnification *
+        eigensolver.eigenvalues().cwiseSqrt();
+    const Eigen::Vector2d ellipse_x_axis = eigensolver.eigenvectors().col(0);
+    const double ellipse_yaw = std::atan2(ellipse_x_axis.y(), ellipse_x_axis.x());
+    const Eigen::Quaterniond quaternion(
+        Eigen::AngleAxisd(ellipse_yaw, Eigen::Vector3d::UnitZ())
+    );
+
+    visualization_msgs::msg::MarkerArray output;
+    output.markers.reserve(2);
+
+    visualization_msgs::msg::Marker delete_previous;
+    delete_previous.header = msg->header;
+    delete_previous.action = visualization_msgs::msg::Marker::DELETEALL;
+    output.markers.push_back(std::move(delete_previous));
+
+    visualization_msgs::msg::Marker marker;
+    marker.header = msg->header;
+    marker.ns = "gtsam_pose_uncertainty";
+    marker.id = 0;
+    marker.type = visualization_msgs::msg::Marker::SPHERE;
+    marker.action = visualization_msgs::msg::Marker::ADD;
+    marker.pose.position.x = position.x();
+    marker.pose.position.y = position.y();
+    marker.pose.position.z = msg->pose.pose.position.z + m_gtsam_z_offset;
+    marker.pose.orientation.x = quaternion.x();
+    marker.pose.orientation.y = quaternion.y();
+    marker.pose.orientation.z = quaternion.z();
+    marker.pose.orientation.w = quaternion.w();
+    marker.scale.x = diameters.x();
+    marker.scale.y = diameters.y();
+    marker.scale.z = m_gtsam_ellipse_thickness;
+    marker.color = m_gtsam_color;
+    output.markers.push_back(std::move(marker));
+
+    m_gtsam_publisher->publish(output);
 }
 
 void PointCloudUncertaintyViz::publishEllipsoids(

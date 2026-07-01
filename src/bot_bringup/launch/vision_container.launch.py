@@ -58,7 +58,7 @@ def generate_launch_description():
     enable_uncertainty_viz_arg = DeclareLaunchArgument(
         "enable_uncertainty_viz",
         default_value="false",
-        description="Publish camera and LiDAR point-covariance ellipsoids for RViz",
+        description="Publish point-cloud and GTSAM pose uncertainty markers for RViz",
     )
 
     uncertainty_viz_magnification_arg = DeclareLaunchArgument(
@@ -77,6 +77,12 @@ def generate_launch_description():
         "uncertainty_viz_lidar_max_markers",
         default_value="0",
         description="Maximum LiDAR ellipsoids per cloud; zero publishes every valid point",
+    )
+
+    uncertainty_viz_gtsam_magnification_arg = DeclareLaunchArgument(
+        "uncertainty_viz_gtsam_magnification",
+        default_value="20.0",
+        description="Uniform visual magnification applied to GTSAM XY ellipse axes",
     )
 
     gazebo = IncludeLaunchDescription(
@@ -191,6 +197,10 @@ def generate_launch_description():
             "lidar_max_markers": ParameterValue(
                 LaunchConfiguration("uncertainty_viz_lidar_max_markers"),
                 value_type=int,
+            ),
+            "gtsam_magnification": ParameterValue(
+                LaunchConfiguration("uncertainty_viz_gtsam_magnification"),
+                value_type=float,
             ),
         }],
     )
@@ -313,6 +323,7 @@ def generate_launch_description():
         uncertainty_viz_magnification_arg,
         uncertainty_viz_camera_max_markers_arg,
         uncertainty_viz_lidar_max_markers_arg,
+        uncertainty_viz_gtsam_magnification_arg,
         gazebo,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,

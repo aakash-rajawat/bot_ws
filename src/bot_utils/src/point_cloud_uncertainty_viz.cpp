@@ -149,10 +149,10 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
 
     m_camera_visualization.marker_namespace = "camera_point_uncertainty";
     m_camera_visualization.color = makeColor(
-        declare_parameter<double>("camera_color.r", 0.10),
+        declare_parameter<double>("camera_color.r", 0.00),
         declare_parameter<double>("camera_color.g", 0.75),
         declare_parameter<double>("camera_color.b", 1.00),
-        declare_parameter<double>("camera_color.a", 0.35)
+        declare_parameter<double>("camera_color.a", 0.50)
     );
     m_camera_visualization.max_markers = static_cast<std::size_t>(camera_max_markers);
     m_camera_visualization.publisher =
@@ -161,19 +161,19 @@ PointCloudUncertaintyViz::PointCloudUncertaintyViz(const std::string& name)
     m_lidar_visualization.marker_namespace = "lidar_point_uncertainty";
     m_lidar_visualization.color = makeColor(
         declare_parameter<double>("lidar_color.r", 1.00),
-        declare_parameter<double>("lidar_color.g", 0.45),
-        declare_parameter<double>("lidar_color.b", 0.05),
-        declare_parameter<double>("lidar_color.a", 0.30)
+        declare_parameter<double>("lidar_color.g", 0.00),
+        declare_parameter<double>("lidar_color.b", 0.00),
+        declare_parameter<double>("lidar_color.a", 0.50)
     );
     m_lidar_visualization.max_markers = static_cast<std::size_t>(lidar_max_markers);
     m_lidar_visualization.publisher =
         create_publisher<visualization_msgs::msg::MarkerArray>(lidar_output_topic, 10);
 
     m_gtsam_color = makeColor(
-        declare_parameter<double>("gtsam_color.r", 0.25),
+        declare_parameter<double>("gtsam_color.r", 0.55),
         declare_parameter<double>("gtsam_color.g", 1.00),
-        declare_parameter<double>("gtsam_color.b", 0.30),
-        declare_parameter<double>("gtsam_color.a", 0.45)
+        declare_parameter<double>("gtsam_color.b", 0.55),
+        declare_parameter<double>("gtsam_color.a", 0.50)
     );
     m_gtsam_publisher =
         create_publisher<visualization_msgs::msg::MarkerArray>(gtsam_output_topic, 10);

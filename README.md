@@ -14,7 +14,11 @@ ros2 launch bot_bringup vision_container.launch.py
 
 That launch starts the headless maze simulation, joystick/control stack, uncertainty-aware sensing nodes, DUGMA relative-pose action servers and clients, GTSAM fusion, and odometry error evaluation.
 
-## 2. Pipeline
+## 2. Bot Decription
+
+![Annotated robot description](demo_files/the_bot-preview.png)
+
+## 3. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:
 
@@ -39,7 +43,7 @@ relative-pose factors
 
 Wheel odometry creates the primary timestamped graph timeline. LiDAR and triangulation relative-pose factors attach to nearby existing graph keys and use robust noise models in the GTSAM fusion node.
 
-## 3. Workspace Layout
+## 4. Workspace Layout
 
 Key packages and directories:
 
@@ -58,7 +62,7 @@ Key packages and directories:
 - `notebooks`: derivation notebooks for uncertainty models.
 - `scripts`: workspace setup, third-party fetch, and Python virtual environment bootstrap scripts.
 
-## 4. Requirements
+## 5. Requirements
 
 The workspace is designed around the provided container setup:
 
@@ -72,7 +76,7 @@ The workspace is designed around the provided container setup:
 
 The devcontainer mounts `/dev/input`, uses host networking, and requests GPU access. Its `postCreateCommand` runs the first-run setup script.
 
-## 5. Setup And Build
+## 6. Setup And Build
 
 Inside the devcontainer, the first-run setup is:
 
@@ -93,7 +97,7 @@ source install/setup.bash
 
 The runtime Docker target also performs third-party fetch, `colcon build --merge-install`, and virtual environment bootstrap during image creation.
 
-## 6. Run
+## 7. Run
 
 Run the integrated uncertainty-aware SLAM pipeline:
 
@@ -133,7 +137,7 @@ Important runtime topics and interfaces:
 - `/bot_evaluation/odom_error`
 - `/xfeat_lightglue`
 
-## 7. Generated Code And Caveats
+## 8. Generated Code And Caveats
 
 Several checked-in generated files are part of the normal build:
 

@@ -75,13 +75,13 @@ def generate_launch_description():
 
     enable_uncertainty_viz_arg = DeclareLaunchArgument(
         "enable_uncertainty_viz",
-        default_value="false",
+        default_value="true",
         description="Publish point-cloud and GTSAM pose uncertainty markers for RViz",
     )
 
     uncertainty_viz_magnification_arg = DeclareLaunchArgument(
         "uncertainty_viz_magnification",
-        default_value="20.0",
+        default_value="1.5",
         description="Uniform visual magnification applied to all ellipsoid axes",
     )
 
@@ -99,13 +99,13 @@ def generate_launch_description():
 
     uncertainty_viz_gtsam_magnification_arg = DeclareLaunchArgument(
         "uncertainty_viz_gtsam_magnification",
-        default_value="20.0",
+        default_value="1.0",
         description="Uniform visual magnification applied to GTSAM XY ellipse axes",
     )
 
     uncertainty_viz_gtsam_max_history_arg = DeclareLaunchArgument(
         "uncertainty_viz_gtsam_max_history",
-        default_value="30",
+        default_value="300",
         description="Number of recent GTSAM pose ellipses retained; zero retains all",
     )
 

@@ -16,7 +16,18 @@ That launch starts the headless maze simulation, joystick/control stack, uncerta
 
 ## 2. Bot Description
 
+`bot_description` defines the robot's physical model, sensor frames, simulation plugins, and visualization assets using modular URDF/Xacro files.
+
+- **Mobile base:** A differential-drive platform with two driven wheels, front and rear caster links, and separate `base_footprint` and `base_link` frames.
+- **Physical model:** CAD-derived STL meshes with simplified collision geometry, mass, and inertia properties for Gazebo simulation.
+- **Sensors:** A stereo RGB camera pair, 360° LiDAR, and IMU, each with dedicated links, optical frames, update rates, and simulated noise models.
+
 ![Annotated robot description](demo_files/the_bot-preview.png)
+
+**Control integration:** Wheel velocity command interfaces and position/velocity feedback are exposed through `gz_ros2_control`.
+
+- **Simulation:** Launch files spawn the robot in configurable Gazebo worlds and bridge clock, camera, LiDAR, IMU, and ground-truth odometry topics to ROS 2.
+- **Visualization:** RViz configurations support model inspection, navigation, and uncertainty visualization.
 
 ## 3. Bot Controller
 

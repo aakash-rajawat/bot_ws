@@ -40,7 +40,12 @@ That launch starts the headless maze simulation, joystick/control stack, uncerta
 
 ### Uncertainty-Aware Wheel Odometry
 
+- **Uncertainty-aware odometry:** `ua_wheel_odom` converts consecutive wheel-encoder readings into a midpoint-integrated planar relative pose and propagates encoder and calibration uncertainty into its $x$, $y$, and yaw covariance.
+- **Research basis:** The uncertainty model is inspired by and adapted from Carvalho Filho et al., [*The Impact of Parametric Uncertainties on Mobile Robots Velocities and Pose Estimation*](https://doi.org/10.1109/ACCESS.2019.2919335).
+
 ![Uncertainty-aware wheel odometry data flow](demo_files/ua_diff_drive.png)
+
+- **Efficient covariance computation:** Symbolic common-subexpression elimination separates static calibration-dependent terms, evaluated once at startup, from dynamic encoder-dependent terms evaluated for each joint-state update, avoiding recomputation of the full covariance expression for every incoming measurement.
 
 ## 4. Pipeline
 

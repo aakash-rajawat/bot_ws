@@ -47,7 +47,11 @@ That launch starts the headless maze simulation, joystick/control stack, uncerta
 
 - **Efficient covariance computation:** Symbolic common-subexpression elimination separates static calibration-dependent terms, evaluated once at startup, from dynamic encoder-dependent terms evaluated for each joint-state update, avoiding recomputation of the full covariance expression for every incoming measurement.
 
-## 4. Pipeline
+## 4. Bot Vision
+
+Documentation for the bot vision pipeline will be added here.
+
+## 5. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:
 
@@ -72,7 +76,7 @@ relative-pose factors
 
 Wheel odometry creates the primary timestamped graph timeline. LiDAR and triangulation relative-pose factors attach to nearby existing graph keys and use robust noise models in the GTSAM fusion node.
 
-## 5. Workspace Layout
+## 6. Workspace Layout
 
 Key packages and directories:
 
@@ -91,7 +95,7 @@ Key packages and directories:
 - `notebooks`: derivation notebooks for uncertainty models.
 - `scripts`: workspace setup, third-party fetch, and Python virtual environment bootstrap scripts.
 
-## 6. Requirements
+## 7. Requirements
 
 The workspace is designed around the provided container setup:
 
@@ -105,7 +109,7 @@ The workspace is designed around the provided container setup:
 
 The devcontainer mounts `/dev/input`, uses host networking, and requests GPU access. Its `postCreateCommand` runs the first-run setup script.
 
-## 7. Setup And Build
+## 8. Setup And Build
 
 Inside the devcontainer, the first-run setup is:
 
@@ -126,7 +130,7 @@ source install/setup.bash
 
 The runtime Docker target also performs third-party fetch, `colcon build --merge-install`, and virtual environment bootstrap during image creation.
 
-## 8. Run
+## 9. Run
 
 Run the integrated uncertainty-aware SLAM pipeline:
 
@@ -166,7 +170,7 @@ Important runtime topics and interfaces:
 - `/bot_evaluation/odom_error`
 - `/xfeat_lightglue`
 
-## 9. Generated Code And Caveats
+## 10. Generated Code And Caveats
 
 Several checked-in generated files are part of the normal build:
 

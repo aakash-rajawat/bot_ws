@@ -46,7 +46,7 @@ UAWheelOdom::UAWheelOdom(const std::string& name)
     declare_parameter("right_wheel_radius", 0.033);
     m_right_wheel_radius = get_parameter("right_wheel_radius").as_double();
 
-    declare_parameter("wheel_separation", 0.17);
+    declare_parameter("wheel_separation", 0.14);
     m_wheel_separation = get_parameter("wheel_separation").as_double();
 
     declare_parameter("com_y_offset", 0.0);

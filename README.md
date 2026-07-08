@@ -51,6 +51,8 @@ That launch starts the headless maze simulation, joystick/control stack, uncerta
 
 Documentation for the bot vision pipeline will be added here.
 
+![Multiview policy node](demo_files/multiview.png)
+
 ## 5. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:

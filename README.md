@@ -53,6 +53,8 @@ Documentation for the bot vision pipeline will be added here.
 
 ![Multiview policy node](demo_files/multiview.png)
 
+![XFeat + LightGlue server](demo_files/xfeat_lightglue_noise_addition.png)
+
 ## 5. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:

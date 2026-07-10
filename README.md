@@ -57,6 +57,8 @@ Documentation for the bot vision pipeline will be added here.
 
 ![Uncertainty-aware distortion correction](demo_files/distortion_correction.png)
 
+![LOSTU staged triangulation](demo_files/lostu_staged.png)
+
 ## 5. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:

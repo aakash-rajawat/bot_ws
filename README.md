@@ -51,13 +51,21 @@ That launch starts the headless maze simulation, joystick/control stack, uncerta
 
 Documentation for the bot vision pipeline will be added here.
 
-![Multiview policy node](demo_files/multiview.png)
+<p align="center">
+  <img src="demo_files/multiview.png" alt="Multiview policy node" />
+</p>
 
-![XFeat + LightGlue server](demo_files/xfeat_lightglue_noise_addition.png)
+<p align="center">
+  <img src="demo_files/xfeat_lightglue_noise_addition.png" alt="XFeat + LightGlue server" />
+</p>
 
-![Uncertainty-aware distortion correction](demo_files/distortion_correction.png)
+<p align="center">
+  <img src="demo_files/distortion_correction.png" alt="Uncertainty-aware distortion correction" />
+</p>
 
-![LOSTU staged triangulation](demo_files/lostu_staged.png)
+<p align="center">
+  <img src="demo_files/lostu_staged.png" alt="LOSTU staged triangulation" />
+</p>
 
 ## 5. Pipeline
 

@@ -71,7 +71,15 @@ Documentation for the bot vision pipeline will be added here.
   <img src="demo_files/lostu_staged.png" alt="LOSTU staged triangulation" />
 </p>
 
-## 5. Pipeline
+## 5. Bot Multi-Sensor Odometry
+
+Documentation for the bot multi-sensor odometry pipeline will be added here.
+
+<p align="center">
+  <img src="demo_files/ua_lidar.png" alt="Uncertainty-aware LiDAR point cloud" />
+</p>
+
+## 6. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:
 

@@ -79,6 +79,10 @@ Documentation for the bot multi-sensor odometry pipeline will be added here.
   <img src="demo_files/ua_lidar.png" alt="Uncertainty-aware LiDAR point cloud" />
 </p>
 
+<p align="center">
+  <img src="demo_files/dugma.png" alt="DUGMA registration pipeline" />
+</p>
+
 ## 6. Pipeline
 
 The runtime pipeline is organized around relative-pose measurements with explicit covariance:

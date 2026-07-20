@@ -85,28 +85,9 @@ Documentation for the bot multi-sensor odometry pipeline will be added here.
 
 ## 6. Pipeline
 
-The runtime pipeline is organized around relative-pose measurements with explicit covariance:
-
-```text
-Gazebo robot
-  -> joint_states -> ua_wheel_odom -> /bot_controller/relative_pose_wheel
-  -> /scan -> ua_lidar_point_cloud -> /ua_lidar/ua_point_cloud
-  -> stereo images -> xfeat_lightglue_server -> vision_frontend -> /ua_triangulation/pointswithcovariance
-
-uncertain point clouds
-  -> mle_relative_pose_client
-  -> MLERelativePose action server
-  -> bot_dugma registration
-  -> /bot_controller/relative_pose_mle_lidar
-  -> /bot_controller/relative_pose_mle_triangulation
-
-relative-pose factors
-  -> gtsam_pose_slam
-  -> /bot_controller/odom_gtsam_fused
-  -> odom_error against Gazebo ground truth
-```
-
-Wheel odometry creates the primary timestamped graph timeline. LiDAR and triangulation relative-pose factors attach to nearby existing graph keys and use robust noise models in the GTSAM fusion node.
+<p align="center">
+  <img src="demo_files/overview_pipeline.png" alt="Overview pipeline" />
+</p>
 
 ## 6. Workspace Layout
 

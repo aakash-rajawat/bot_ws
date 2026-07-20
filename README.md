@@ -183,30 +183,6 @@ Important runtime topics and interfaces:
 - `/bot_evaluation/odom_error`
 - `/xfeat_lightglue`
 
-## 10. Generated Code And Caveats
-
-Several checked-in generated files are part of the normal build:
-
-- `src/bot_controller/src/generated`: symbolic wheel-odometry covariance precomputes.
-- `src/bot_vision/generated`: SymForce camera distortion covariance code and CasADi triangulation covariance code.
-- `src/bot_multisensor_odometry/generated`: CasADi LiDAR point covariance code.
-- `src/bot_dugma/src/generated`: DUGMA M-step polynomial basis, coefficient tiles, and quaternion-gradient helpers.
-
-Generation scripts live next to the generated artifacts:
-
-- `src/bot_dugma/m_step_opt/*.py`
-- `src/bot_vision/symforce/*.py`
-- `src/bot_vision/casadi/*.py`
-- `src/bot_multisensor_odometry/casadi/*.py`
-
-Known caveats in the current tree:
-
-- `bot_bringup/vision_container.launch.py` is the canonical integrated launch path.
-- `bot_localization/launch/global_localization.launch.py` currently has a misspelled launch entry function and should be treated as unfinished.
-- Package metadata still contains TODO description fields in several packages.
-- Some DUGMA and MLE client/server diagnostics are intentionally verbose while the pipeline is being tuned.
-- `bot_vision_py/launch/xfeat_lightglue_server.launch.py` assumes the workspace path `/workspaces/bot_ws`.
-
 ## License
 
 Original source code in this repository is licensed under the Apache License, Version 2.0. See `LICENSE`.

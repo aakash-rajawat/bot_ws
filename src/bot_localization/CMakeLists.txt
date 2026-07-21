@@ -21,7 +21,7 @@ include_directories(include)
 
 add_executable(imu_republisher src/imu_republisher.cpp)
 ament_target_dependencies(
-  imu_republisher rclcpp 
+  imu_republisher rclcpp
   sensor_msgs
 )
 
@@ -54,10 +54,15 @@ install(TARGETS
 )
 
 if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
   find_package(ament_lint_auto REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+  ament_add_pytest_test(
+    test_global_localization_launch
+    test/test_global_localization_launch.py
+  )
 endif()
 
 ament_package()

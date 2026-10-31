@@ -4,7 +4,19 @@
 **Prepared:** 31 October 2026.  
 **Application context:** TU Hamburg / MTEC, Research Associate world modeling for autonomous mobile robots (26926WE1).  
 **Intended implementation location:** this ROS 2 Jazzy workspace; prototype code should be confined to a new package or separate clearly delimited module. Do not disturb existing SLAM bringup.  
-**Time box:** 3–4 days for minimum viable demonstrator; absolute maximum 7 days.
+**Time box:** 2–3 weeks for a rigorous experiment, with a working first milestone after 4–7 days; freeze new features by approximately 21 November 2026 to preserve time before the 11 December TUHH deadline.
+
+## Design revision 2 — 31 October 2026 (authoritative)
+
+**Decision:** Expand the initial one-week plan into a 2–3 week benchmark of four decision-making approaches: conventional navigation, hand-designed uncertainty-aware navigation, tabular Q-learning, and a PyTorch-based Deep Q-Network (DQN). DQN is a **core deliverable**, not merely a stretch. The original 3–4-day prototype becomes a milestone, not the completion date. Deadline for the application remains 11 December 2026. This is still **design only**; none of these methods has been newly implemented or evaluated.
+
+**Why:** The applicant already has a probabilistic robot-estimation stack and uncertainty-aware LiDAR/vision point-cloud geometry. The project should test whether uncertainty features improve *actions*, and whether tabular versus deep RL differ under a common environment and action set. Implementing and training a compact PyTorch DQN (including replay buffer, target network and optimization) provides transferable deep-learning evidence; Stable-Baselines3 can serve as an independent reference/validation implementation.
+
+**Scientific scope:** A *local* predictive world model, not a learned generative environment simulator. Keep the geometry/covariance estimation pipeline and Nav2 as existing modules. Add a moving-object tracker, a short-horizon probabilistic occupancy/risk representation, and an upper-level policy that selects one of {normal progress, slow progress, yield/wait}. A fixed collision supervisor remains in charge of hard stop/timeout safety. The effect of RL is evaluated on high-level sequential decisions, not on raw wheel torque.
+
+**Important modeling distinction:** Individual uncertain 3D LiDAR/vision points are not automatically a calibrated Gaussian obstacle track or dynamic occupancy distribution. Document detection, data association, spatial covariance aggregation, tracking/prediction and frame alignment. Use a transparent simplified local sensor likelihood if point-cluster uncertainty aggregation cannot be established quickly. Train against the observations and beliefs, never simulator-truth features. Gazebo ground truth may be used to compute rewards during training and metrics during evaluation, not policy observations.
+
+**Reusable machine-learning evidence:** PyTorch model definition, minibatch sampling, replay-buffer design, target-network update, optimizer and loss tracking, checkpointing, tensor shape/unit tests, seed control, hyperparameter/config files, evaluation and ablation scripts. A pretrained Stable-Baselines3 model alone is less persuasive than source-backed learning code, although SB3 can be used for comparison. It is legitimate to claim deep RL only once the neural policy has actually been trained and evaluated.
 
 ## The research question
 
@@ -48,14 +60,24 @@ The first integration spike must verify timestamps, QoS, data fields, odometry c
 
 **Critical information-flow rule:** select actions using only information available at the decision time. Ground truth must never leak into policy observations. Training-time reward may use simulator collision and success signals, but deployment decisions may not.
 
-## Policies and empirical comparison
+## Policies and empirical comparison (revision 2 — required)
 
-1. **Certainty-equivalent baseline:** normal navigation using point-estimated moving-object position / simple conservative stop radius, no covariance feature.
-2. **Hand-engineered uncertainty-aware baseline:** same route controller but speed/wait choices depend explicitly on predicted risk and uncertainty. This tests whether uncertainty helps independently of RL.
-3. **Learned policy (the actual RL component):** implement tabular Q-learning first over discretized risk/covariance/distance features, OR use Stable-Baselines3 DQN (compact numeric belief features, discrete high-level actions) if the fast simulator is stable by day 3. A DQN is a **stretch** if ROS integration or training threatens the one-week cap.
-4. **Ablation:** trained policy with uncertainty features removed or zeroed, evaluated on the exact same held-out scenarios. To avoid invalid comparisons, retrain a separate policy without uncertainty features rather than merely zeroing inputs to a fixed network.
+**All four** see the same robot/obstacle scenario distributions and use the same base Nav2 low-level controller/safety limits. For tabular RL, numerical features must be discretized, and this information-loss is a reported limitation, not a different underlying sensing source.
 
-**Avoid**: claiming PPO/SAC/DQN experience unless actually implemented and trained; claiming 'world-model learning' from a fixed Kalman filter; presenting this as full autonomy or a hospital-validated system.
+1. **Conventional baseline:** Nav2 + standard obstacle observation, no explicit covariance-aware high-level decision rule. Do not allow it to be trivially unsafe; apply the same hard collision supervisor to all.
+2. **Uncertainty-aware non-learning baseline:** a transparent rule that uses relative separation, estimated covariance, prediction horizon and risk to set normal/cautious/wait decisions. The main *uncertainty effectiveness* baseline.
+3. **Classical RL:** tabular Q-learning over a controlled small discretization of goal-progress, obstacle proximity, predicted risk and covariance; 3 discrete high-level actions. Implement and test from first principles. Must genuinely learn from sequential rewards.
+4. **Deep RL — CORE DELIVERABLE:** PyTorch DQN with a small MLP receiving the corresponding *continuous* normalized belief features (roughly 10–20 scalars). Implement replay buffer, online Q network, target network, epsilon-greedy exploration, TD target, minibatch optimizer, gradient clipping, checkpoints, and train/evaluation loop. Validate behavior against official SB3 DQN if useful. SB3 DQN provides vanilla DQN, not Double/Dueling/prioritized replay.
+5. **Required ablations:** train separate RL versions *with and without covariance/predicted uncertainty features*. Never declare an ablation by feeding a trained network arbitrary zero covariance inputs without retraining, as that creates distribution shift. Optional: remove predicted obstacle motion and retain only current detections.
+6. **Optional fifth learner after the main four are stable:** PPO (a different policy-gradient family), but only if the common observations/actions, experimental budget and quality controls can be preserved. No advantage to adding it merely to display another algorithm name.
+
+**Model input (initial DQN):** normalized goal range/bearing; measured ego speed; position/yaw uncertainty scalars; tracked obstacle relative position/velocity; track covariance summaries; track age/missed detection flag; closest-approach / short-horizon risk from uncertainty-aware rollout; optional summarized occupancy sectors with confidence. Use current robot frame with documented covariance transforms and timestamp alignment.
+
+**Action semantics:** {go at normal allowed speed, go at reduced speed, hold/yield}; actions influence Nav2 speed or a supervised command layer. ROS 2 Jazzy Nav2 supports a controller server speed-limit topic, but its SpeedLimit semantics must be obeyed (0 means **no restriction**, not stop). A separate safe stop/hold action is required, and the collision-monitoring supervisor must never be bypassed.
+
+**Learning objective:** reward target-reaching and forward progress, penalize collisions and near-misses strongly, elapsed time and unnecessary waiting mildly. Avoid rewards from simulator ground-truth state that leak into the *policy observation*. Tuning the exact weights should be a documented experiment, not adjusted after seeing final test outcomes.
+
+**Comparability:** training scenario distributions held constant; independent training seeds; frozen held-out obstacle trajectories/noise conditions; report compute/training interactions, elapsed time and model size. All controllers are evaluated on the *same* paired held-out episodes, with the same physical/navigation safety constraints.
 
 ## Implementable architecture
 
@@ -73,7 +95,7 @@ Dynamic obstacle KF         Robot pose covariance
                    high-level decision
                    (rule, Q-table, DQN)
                              │
-       safe Nav2 velocity/goal interface + watchdog
+       supervised Nav2 speed-limit / hold interface + collision monitor + watchdog
                              │
                     robot navigation
                              │
@@ -82,7 +104,7 @@ Dynamic obstacle KF         Robot pose covariance
 
 Proposed new modules (names are suggestions, not yet created):
 - `src/bot_belief_navigation/` ROS 2 package: obstacle belief estimator, short-horizon predictor, decision executor, logging.
-- `experiments/belief_nav/` fast Python Gymnasium-compatible simulator, baselines, Q-learning trainer, optional DQN trainer, evaluation script, tests, and figures.
+- `experiments/belief_nav/` fast Python Gymnasium-compatible simulator, baselines, tabular Q-learning trainer, **PyTorch DQN trainer (required)**, checkpointing, policy comparison, ablation/evaluation scripts, tests and figures.
 - `docs/` research statement, honest limitations and short screen-recorded demo.
 
 Use fast headless non-ROS simulation for repeated RL training; use ROS 2/Gazebo for demonstration and final held-out testing. The two environments will not be identical; report transfer assumptions and discrepancies.
@@ -104,19 +126,23 @@ Use fast headless non-ROS simulation for repeated RL training; use ROS 2/Gazebo 
 - Report: goal-success %, collision %, minimum clearance / near misses, traversal time, number of waits, path length, and inference latency. Include uncertainty calibration if enough ground truth is available.
 - Desired hypothesis test, **not acceptance threshold**: learned belief-aware policy reduces collision/near-miss incidence compared with a certainty-equivalent policy while preserving acceptable completion time. If no gains, publish the comparison and limits honestly.
 
-## Hard time box
+## Delivery schedule — revision 2 (2–3 weeks, finish well before 11 December)
 
-| Day | Deliverable and stop condition |
+| Phase | Working deliverables and gates |
 | --- | --- |
-| 1 | Mathematical model; 1 moving-obstacle scenario; fast simulator with deterministic seeds and baselines. |
-| 2 | Obstacle Kalman filter, covariance / risk outputs; tests; rule-based risk-aware policy. |
-| 3 | Tabular Q-learning trainer, learning curve, held-out baseline comparison. **Minimum viable RL milestone.** |
-| 4 | ROS 2 interface spike: publish/subscribe, inspect live covariance, execute safe speed/wait decisions in Gazebo. This ends the **3–4 day minimum version** if successful. |
-| 5 | Better ROS integration; new moving-obstacle world; optional compact DQN if core is already stable. |
-| 6 | Randomized held-out evaluations, noise ablation, plots, failure analysis. |
-| 7 | README, reproducible commands, short video/GIF, comparison table, accurate CV-ready evidence. **Stop expanding scope.** |
+| Days 1–3 | Verify live ROS 2 interfaces and sensor timestamps; define one moving-obstacle scenario; implement a fast seedable Gymnasium environment. Run `check_env`. |
+| Days 4–6 | Dynamic-obstacle KF/short-horizon predictor; covariance feature validation; conventional and uncertainty-aware rule baselines. **First MVP**. |
+| Days 7–9 | Implement, train and debug tabular Q-learning with train/test splits, learning curves and saved policy. |
+| Days 10–13 | Implement **PyTorch DQN** from scratch: replay buffer, target network, epsilon-greedy loop, loss curves, checkpoint. Train on same scenario family. Use SB3 DQN only as reference if needed. |
+| Days 14–16 | ROS 2/Gazebo inference bridge and supervised speed/hold execution for learned policies; compare navigation against the Python training environment; solve obvious interface mismatches. |
+| Days 17–19 | Held-out paired evaluation under sensor-noise/occlusion/obstacle-motion shifts, covariance ablations, training seeds, plots, failure cases and basic statistics. |
+| Days 20–21 | Clean experiment configs, scripts, README, demo video, exact limitations and measured CV evidence; **feature freeze**. |
 
-**Fallback when time runs short:** retain the runnable tabular Q-learning + uncertainty-aware hand-designed baseline and Python simulator, show one ROS 2 example, and document that the learned policy was not demonstrated on hardware. Avoid a rushed deep-RL model without evaluation.
+**Realistic stop hierarchy:** (1) two correct deterministic baselines and honest sensor model; (2) trained tabular learner; (3) trained DQN; (4) ROS/Gazebo validation; (5) advanced point-cloud feature modeling / optional PPO. Do not sacrifice reliability, documentation or deadline buffer to add a third learning algorithm.
+
+**Data throughput strategy:** run RL episode loops in a lightweight headless Python/Gymnasium dynamics and sensor simulator (seconds/minutes), and run deployment-like held-out scenarios in ROS 2/Gazebo. Record the simulator-to-Gazebo abstraction gap; do not claim a policy was trained end-to-end in ROS if only inference occurs there.
+
+**Evaluation design:** at least ~50 paired held-out navigation scenarios per policy × several sensor-quality regimes where compute allows; 3–5 independent RL training seeds if feasible. Report sample sizes and spreads, goal success %, collision %, near-miss %, minimum clearance, time to goal, path length, unnecessary waiting and inference latency. Train-without-uncertainty RL ablations on comparable budgets. Report negative or mixed results without embellishment.
 
 ## Powell 2022 reading map (do not commit the copyrighted PDF)
 
@@ -144,7 +170,7 @@ Book is an excellent **decision-modeling** base and covers classical Q-learning,
 
 ## CV / application integrity
 
-**Current status: NOT CV-ELIGIBLE.** Do not add as a completed achievement until working code, reproducible results and a demonstrable ROS integration exist.
+**Current status: NOT CV-ELIGIBLE (revision 2, before training).** Do not add as a completed achievement until working code, reproducible results and a demonstrable ROS integration exist.
 
 If successfully implemented, an evidence-backed entry could eventually be:
 > **Independent Project — Belief-Aware Dynamic Robot Navigation (ROS 2, Python, [actual RL method]):** Implemented a local probabilistic obstacle model and a learned high-level navigation policy using [verified uncertainty features]; evaluated against [verified baselines] across [number] held-out dynamic scenarios, reporting [measured outcomes].
